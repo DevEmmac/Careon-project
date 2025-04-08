@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid bg main-cointainer">
+        <nav class="navbar navbar-expand-lg fixed-top">
+
+            <div>
+                <a class="navbar-brand" href="#"><img src="./images/logo-2.png" alt=""></a>
+            </div>
+              
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mx-auto gap-3">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#"  data-bs-toggle="dropdown" aria-expanded="false">
+                          Home
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link d-inline-flex" href="#">About Us</a>
+                  </li>
+ 
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Pages
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Service
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Shop
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Blog
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                  </li>
+ 
+                </ul>
+            </div>
+
+              <div class="plus">
+                <a href="#" class="btn bg-white rounded-pill px-5 py-3">Get in touch<img src="./images/plus.svg" alt="plus"></a>
+              </div>
+          
+              
+          </nav>
+
+          <!-- slider -->
+
+          <div class="container-fluid mt-5 mb-5">
+            <div class="slider-container">
+                <!-- Progress bar -->
+                <!-- <div class="progress-bar-container">
+                    <div class="progress-bar" id="slider-progress"></div>
+                </div>
+                 -->
+                <!-- Bootstrap Carousel -->
+                <div id="animatedSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+                    <!-- Indicators -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#animatedSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#animatedSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#animatedSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                        <!-- Slide 1 -->
+                        <div class="carousel-item active">
+                            <div class="text-overlay">
+                                <h4 class="slide-badge health">Health Care</h4>
+                                <h2 class="slide-title display-4 mb-4"><span class="">Exceptional Health</span> Always There Top</h2>
+                                <p class="slide-description lead mb-4">Health care is a vital aspect of maintaining overall well-being,encompassing a range of service from preventive</p>
+                                <div class="plus-animation mt-4">
+                                    <button class="more-slide more"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0">More About Us <img src="./images/plus.svg" alt="plus"></a></button>
+                                    <button class="more-slide"><a href="" class="more-slide2"><i class='bx bx-play' ></i></a></button>
+                                    <button class="more-slide text-white third-slide">Watch More</button>
+                                </div>
+                
+                            </div>
+                            <img src="./images/main-slider-img-1.jpg" class="carousel-image" alt="Nature"> 
+                        </div>
+                        
+                        <!-- Slide 2 -->
+                        <div class="carousel-item">
+                            <div class="text-overlay">
+                                    <h4 class="slide-badge health">Health Care</h4>
+                                    <h2 class="slide-title display-4 mb-4"><span class="">Exceptional Health</span> Always There Top</h2>
+                                    <p class="slide-description lead mb-4">Health care is a vital aspect of maintaining overall well-being,encompassing a range of service from preventive</p>
+                                    <div class="plus-animation mt-4">
+                                        <button class="more-slide more"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0">More About Us <img src="./images/plus.svg" alt="plus"></a></button>
+                                        <button class="more-slide"><a href="" class="more-slide2"><i class='bx bx-play' ></i></a></button>
+                                        <button class="more-slide text-white third-slide">Watch More</button>
+                                    </div>
+                            </div>
+                            <img src="./images/main-slider-img-2.jpg" class="carousel-image" alt="City">
+                           
+                        </div>
+                        
+                        <!-- Slide 3 -->
+                        <div class="carousel-item">
+                            <div class="text-overlay">
+                                    <h4 class="slide-badge health">Health Care</h4>
+                                    <h2 class="slide-title display-4 mb-4"><span class="">Exceptional Health</span> Always There Top</h2>
+                                    <p class="slide-description lead mb-4">Health care is a vital aspect of maintaining overall well-being,encompassing a range of service from preventive</p>
+                                    <div class="plus-animation mt-4">
+                                        <button class="more-slide more"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0">More About Us <img src="./images/plus.svg" alt="plus"></a></button>
+                                        <button class="more-slide"><a href="" class="more-slide2"><i class='bx bx-play' ></i></a></button>
+                                        <button class="more-slide text-white third-slide">Watch More</button>
+                                    </div>
+                    
+                            </div>
+                            <img src="./images/main-slider-img-3.jpg" class="carousel-image" alt="Technology">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          
+            <!-- Content section -->
+            <!-- <div class="container my-5">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2>Welcome to Our Website</h2>
+                        <p class="lead">Explore our featured content in the animated slider above.</p>
+                    </div>
+                </div>
+            </div> -->
+          </div>
+        
+    </div>
+
+
+    <!-- Section -->
+     <div class="section">
+        <div class="marquee">
+            <div class="marquee-content">
+                <div class="marquee-item">Unlock a 20% savings on your first medical service.</div>
+                <div class="marquee-item">Creative Design</div>
+                <div class="marquee-item">Bootstrap Powered</div>
+                <div class="marquee-item">Responsive Layout</div>
+                <div class="marquee-item">Smooth Animations</div>
+                <div class="marquee-item">Unlock a 20% savings on your first medical service</div>
+                <div class="marquee-item">Unlock a 20% savings on your first medical service</div>
+                <div class="marquee-item">Unlock a 20% savings on your first medical service</div>
+            </div>
+        </div>
+     </div>
+   
+    <div class="container-fluid mx-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 border border-2 border-info">
+                    <img src="./images/about-two-img-1.jpg" alt="">
+                </div>
+                <div class="col-6 border border-2 border-danger about">
+                    <h2 class="rounded-pill px-4 py-2 fs-5">About Us</h2>
+                    <h1>Your Wellness Our Priority Empowering Healthie</h1>
+                        <div>
+                            <div class="icon2">
+                                <h1>Your Wellness Our Priority</h1>
+                                <p>Health care is a vital aspect of maintaining overall well-being, encompassing a range of services from preventive care to treatment</p>
+                            <div class="icon2">
+                                <h1>Empowering Healthier Lives</h1> 
+                                <p>Health care is a vital aspect of maintaining overall well-being, encompassing a range of services from preventive care to treatment
+                                </p>
+                            </div>
+                        </div>
+                    <img src="./images/about-two-img-2.jpg" alt="">
+
+                        <div>
+                            <p>Where Health Matters Most</p>
+                            <p>Caring for You, Always</p>
+                            <p>Enhancing Lives Through Care</p>
+                            <p>Quality Care, Exceptional Service</p>
+                        </div>
+
+                    <h3>Health care is a vital aspect of maintaining overall well-being, encompassing a range of services from preventive care to treatment</h3>
+
+                    <button class="butt"><a href="" class="rounded-pill px-4 py-3 ml-0">More About Us <i class='bx bx-plus' ></i></a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Custom Script for Progress Bar -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.getElementById('animatedSlider');
+            const progressBar = document.getElementById('slider-progress');
+            const slideInterval = 6000; // Match this with data-bs-interval
+            let startTime;
+            let animationFrame;
+            
+            // Function to update progress bar
+            function updateProgress(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const elapsed = timestamp - startTime;
+                const progress = Math.min(elapsed / slideInterval * 100, 100);
+                
+                progressBar.style.width = progress + '%';
+                
+                if (elapsed < slideInterval) {
+                    animationFrame = requestAnimationFrame(updateProgress);
+                }
+            }
+            
+            // Start progress animation
+            animationFrame = requestAnimationFrame(updateProgress);
+            
+            // Reset progress on slide change
+            carousel.addEventListener('slide.bs.carousel', function() {
+                cancelAnimationFrame(animationFrame);
+                progressBar.style.width = '0%';
+                startTime = null;
+                animationFrame = requestAnimationFrame(updateProgress);
+            });
+            
+            // Pause on hover
+            carousel.addEventListener('mouseenter', function() {
+                cancelAnimationFrame(animationFrame);
+            });
+            
+            // Resume on mouse leave
+            carousel.addEventListener('mouseleave', function() {
+                startTime = null;
+                animationFrame = requestAnimationFrame(updateProgress);
+            });
+        });
+    </script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

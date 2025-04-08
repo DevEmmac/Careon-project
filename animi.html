@@ -1,0 +1,292 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Content Animations</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Custom animation styles */
+        .hero-section {
+            background-color: #f8f9fa;
+            padding: 100px 0;
+            overflow: hidden;
+        }
+        
+        /* Custom animations */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 1.2s ease-out;
+        }
+        
+        .slide-up {
+            animation: slideUp 1s ease-out;
+        }
+        
+        .scale-in {
+            animation: scaleIn 1.2s ease-out;
+        }
+        
+        .img-hover-zoom {
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        
+        .img-hover-zoom img {
+            transition: transform 0.8s ease;
+        }
+        
+        .img-hover-zoom:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Bootstrap card animation on hover */
+        .animated-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .animated-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+        }
+        
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        /* Staggered animation for multiple items */
+        .stagger-item:nth-child(1) { animation-delay: 0.1s; }
+        .stagger-item:nth-child(2) { animation-delay: 0.3s; }
+        .stagger-item:nth-child(3) { animation-delay: 0.5s; }
+        .stagger-item:nth-child(4) { animation-delay: 0.7s; }
+    </style>
+</head>
+<body>
+    <!-- Hero Section with Animated Content -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 mb-4 fade-in">Beautiful Content Animations</h1>
+                    <p class="lead slide-in-right">Engage your users with smooth and elegant animations that make your content come to life.</p>
+                    <div class="mt-4 slide-in-right" style="animation-delay: 0.3s;">
+                        <a href="#" class="btn btn-primary btn-lg">Get Started</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-hover-zoom scale-in">
+                        <img src="/api/placeholder/500/400" alt="Hero Image" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section with AOS Library -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Our Features</h2>
+            <div class="row g-4">
+                <!-- Feature Card 1 -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 animated-card">
+                        <img src="/api/placeholder/300/200" class="card-img-top" alt="Feature 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Responsive Design</h5>
+                            <p class="card-text">Our layouts work perfectly on any device, from mobile to desktop.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature Card 2 -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 animated-card">
+                        <img src="/api/placeholder/300/200" class="card-img-top" alt="Feature 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Beautiful Animations</h5>
+                            <p class="card-text">Engage users with smooth, performance-optimized animations.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature Card 3 -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 animated-card">
+                        <img src="/api/placeholder/300/200" class="card-img-top" alt="Feature 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Modern Components</h5>
+                            <p class="card-text">Built with the latest Bootstrap features and custom elements.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature Card 4 -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100 animated-card">
+                        <img src="/api/placeholder/300/200" class="card-img-top" alt="Feature 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Performance First</h5>
+                            <p class="card-text">Optimized for speed while maintaining visual excellence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Content Section with Staggered Animations -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 data-aos="fade-right">Staggered Animation Effects</h2>
+                    <p class="lead mb-4" data-aos="fade-right" data-aos-delay="200">Content appears with elegant timing for maximum impact.</p>
+                    
+                    <div class="d-flex align-items-center mb-3 slide-up stagger-item">
+                        <div class="bg-primary text-white rounded-circle p-3 me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h5 class="mb-0">Professional Design</h5>
+                            <p class="mb-0 text-muted">Clean and modern aesthetics</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex align-items-center mb-3 slide-up stagger-item">
+                        <div class="bg-primary text-white rounded-circle p-3 me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-lightning" viewBox="0 0 16 16">
+                                <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641l2.5-8.5z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h5 class="mb-0">Fast Performance</h5>
+                            <p class="mb-0 text-muted">Optimized for speed and efficiency</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex align-items-center mb-3 slide-up stagger-item">
+                        <div class="bg-primary text-white rounded-circle p-3 me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
+                                <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h.05c.568-.681.795-1.295.795-1.295v-.346c0-.855-.318-1.215-.904-1.432-.585-.216-1.422-.432-1.422-.432v-.609c0-.596.311-.716.753-.716h.896v-.428h-1.005c-.743 0-1.154.361-1.154 1.112v.638c0 .624.277.818.973 1.076.527.195 1.226.382 1.226.382v.634c0 .547-.363.689-1.09.689h-.944v.428z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h5 class="mb-0">Global Support</h5>
+                            <p class="mb-0 text-muted">Available 24/7 across all time zones</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex align-items-center mb-3 slide-up stagger-item">
+                        <div class="bg-primary text-white rounded-circle p-3 me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-shield-check" viewBox="0 0 16 16">
+                                <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"/>
+                                <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7 8.293l3.146-3.147a.5.5 0 0 1 .708 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h5 class="mb-0">Enhanced Security</h5>
+                            <p class="mb-0 text-muted">Protected with latest security measures</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+                    <div class="position-relative">
+                        <img src="/api/placeholder/540/400" alt="Content image" class="img-fluid rounded shadow-lg">
+                        <div class="position-absolute" style="bottom: -20px; right: -20px; z-index: -1; background-color: #0d6efd; width: 200px; height: 200px; border-radius: 8px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonial Section with Scroll-triggered animations -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">What Our Clients Say</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="/api/placeholder/60/60" alt="Client 1" class="rounded-circle me-3">
+                            <div>
+                                <h5 class="mb-0">Sarah Johnson</h5>
+                                <small class="text-muted">CEO at TechCorp</small>
+                            </div>
+                        </div>
+                        <p class="card-text">"The animations and transitions make our website stand out from competitors. Our engagement metrics have increased significantly since implementation."</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="/api/placeholder/60/60" alt="Client 2" class="rounded-circle me-3">
+                            <div>
+                                <h5 class="mb-0">Michael Brown</h5>
+                                <small class="text-muted">Marketing Director</small>
+                            </div>
+                        </div>
+                        <p class="card-text">"The smooth animations have transformed our user experience. Our bounce rate decreased by 40% after implementing these beautiful transitions."</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="flip-left" data-aos-delay="300">
+                    <div class="card h-100 border-0 shadow-sm p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="/api/placeholder/60/60" alt="Client 3" class="rounded-circle me-3">
+                            <div>
+                                <h5 class="mb-0">Emily Rodriguez</h5>
+                                <small class="text-muted">UX Designer</small>
+                            </div>
+                        </div>
+                        <p class="card-text">"As a designer, I appreciate how these animations enhance the user experience without sacrificing performance. They're subtle yet impactful."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bootstrap JS with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+        });
+    </script>
+</body>
+</html> -->
