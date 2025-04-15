@@ -12,15 +12,12 @@
 </head>
 <body>
     <div class="container-fluid bg main-cointainer">
+        <!-- Large Screen -->
         <nav class="navbar navbar-expand-lg fixed-top">
-
-            <div>
-                <a class="navbar-brand" href="#"><img src="./images/logo-2.png" alt=""></a>
-            </div>
-              
-            <button class="navbar-toggler bg-info text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon bg-info text-white"></span>
-            </button>
+            <a href=""><img src="./images/logo-2.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="text-white"></span>
+                </button>
 
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav mx-auto gap-3">
@@ -41,9 +38,7 @@
                         </li>
  
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Pages
-                        </a>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -52,9 +47,7 @@
                   </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Service
-                        </a>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Service</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -63,9 +56,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Shop
-                        </a>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -94,12 +85,87 @@
               <div class="plus d-none d-lg-block">
                 <a href="#" class="btn bg-white rounded-pill px-5 py-3">Get in touch<img src="./images/plus.svg" alt="plus"></a>
               </div>
-          
           </nav>
 
-          <!-- slider -->
 
-          <div class="container-fluid mb-5 border border-2 border-danger">
+            <!-- Responsive -->
+            <div class="smallscreen">
+                <div class="screen-sm w-100 d-flex justify-content-between mt-5">
+                    <a class="ml-2" href="#"><img src="./images/logo-2.png" alt=""></a>
+                    <button class="btn menu-icon text-white fs-2 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i class='bx bx-menu'></i></button>
+                </div>
+                 
+                <!-- <div class=" bg-info w-100 border border-2 border-danger"> -->
+                    <div class="offcanvas offcanvas-start border border-2 border-info can-vas w-100" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                        <div class="layer2">
+                            <div class="offcanvas-header d-inline-flex">
+                                <h5 class="offcanvas-title" id="offcanvasExampleLabel"><img src="./images/logo-2.png"></h5>
+                                <button type="button" class="btn border-0 text-white fs-2" data-bs-dismiss="offcanvas" aria-label=""><i class='bx bx-x'></i></button>
+                            </div>
+                              <div class="offcanvas-body border border-2 border-danger ">
+
+                                <div class="dropdown mt-3">
+                                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                    Dropdown button
+                                  </button>
+                                  <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                  </ul>
+                                </div>
+
+                                <div class="dropdown mt-3">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                      Dropdown button
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="#">Action</a></li>
+                                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                  </div>
+
+                                  <div class="dropdown mt-3">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                      Dropdown button
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="#">Action</a></li>
+                                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                  </div>
+
+                                  <div class="dropdown mt-3">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                      Dropdown button
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="#">Action</a></li>
+                                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                  </div>
+
+                                  <div class="dropdown mt-3">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                      Dropdown button
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="#">Action</a></li>
+                                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                  </div>
+                              </div>
+                        </div> 
+                    </div>
+                <!-- </div> -->
+            </div>
+            
+          <!-- slider -->
+          <div class="container-fluid mb-5">
             <div class="slider-container">
                 <!-- Progress bar -->
                 <!-- <div class="progress-bar-container">
@@ -123,8 +189,8 @@
                                 <h4 class="slide-badge health">Health Care</h4>
                                 <h2 class="slide-title display-4 mb-4"><span class="">Exceptional Health</span> Always There Top</h2>
                                 <p class="slide-description lead mb-4">Health care is a vital aspect of maintaining overall well-being,encompassing a range of service from preventive</p>
-                                <div class="plus-animation mt-4 d-inline-flex align-items-center d-sm-col">
-                                    <button class="more-slide more"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0">More About Us <img src="./images/plus.svg" alt="plus"></a></button>
+                                <div class="plus-animation mt-4 d-flex align-items-center">
+                                    <button class="more-slide more col-sm-5"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0">More About Us <img src="./images/plus.svg" alt="plus"></a></button>
                                     <button class="more-slide"><a href="" class="more-slide2"><i class='bx bx-play' ></i></a></button>
                                     <button class="more-slide text-white third-slide">Watch More</button>
                                 </div>
@@ -215,11 +281,10 @@
     <div class="container-fluid mb-4">
         <div class="about-container mx-auto rounded-5 d-flex justify-content-between">
             <div class="row">
-                <div class="col-md-6 col-sm-12 about-img">
-                    <img src="./images/about-two-img-1.jpg" class="rounded-start-5" alt="">
+                <div class="col-md-6 mx-auto about-img">
+                    <img src="./images/about-two-img-1.jpg" class="rounded-start-5 rounded-sm-5 mx-auto" alt="">
                 </div>
-
-                <div class="col-md-6 col-sm-12 about w-50">
+                <div class="col-md-6 about mx-auto mt-3 border-2 border-danger">
                     <h2 class="rounded-pill px-4 py-2 fs-5">About Us</h2>
                     <h1>Your Wellness Our Priority Empowering Healthie</h1>
                         <div class="">
@@ -232,48 +297,44 @@
                                     <h3 class="">Your Wellness Our Priority</h1>
                                     <p>Health care is a vital aspect of maintaining overall well-being, encompassing a range of services from preventive care to treatment</p>
                                   </div> 
-                            </div>    
+                                 
+                            </div>   
 
                             <div class="d-inline-flex align-items-center mt-3">
                                 <div class="wellness mx-auto rounded-circle">
                                     <img width="45" height="45" src="https://img.icons8.com/external-sbts2018-outline-sbts2018/58/external-bandage-emergencies-set-sbts2018-outline-sbts2018.png" alt="external-bandage-emergencies-set-sbts2018-outline-sbts2018"/>
                                 </div>
-                               
                                 <div class="icon2">
                                     <h3>Empowering Healthier Lives</h1> 
                                     <p>Health care is a vital aspect of maintaining overall well-being, encompassing a range of services from preventive care to treatment</p>
                                 </div>    
                             </div>
                         </div>
-
                             <img src="./images/about-two-img-2.jpg" alt="" class="w-100 rounded-4 mt-4" >
-                       
-
-                        <div class="w-100 mt-5">
+                       <div class="w-100 mt-5">
                             <div class="">
-                                <div class="row row-cols-2">
-                                    <div class="col row-p text-start">
+                                <div class="row col-sm"> 
+                                    <div class="col-sm col-md-6 row-p text-start">
                                         <p class="align-items-center d-inline-flex gap-2"> <i class='bx bxs-chevrons-right'></i>Where Health Matters Most</p>
                                     </div>
 
-                                    <div class="col row-p text-start">
+                                    <div class="col-sm col-md-6 row-p text-start">
                                         <p class="align-items-center d-inline-flex gap-2"><i class='bx bxs-chevrons-right'></i>Caring for You, Always</p>
                                     </div>
 
-                                    <div class="col row-p text-start">
+                                    <div class="col-sm col-md-6 row-p text-start">
                                         <p class="align-items-center d-inline-flex gap-2"><i class='bx bxs-chevrons-right'></i>Enhancing Lives Through Care</p>
                                     </div>
 
-                                    <div class="col ml-0 row-p text-start">
+                                    <div class="col-sm col-md-6 ml-0 row-p text-start">
                                         <p class="align-items-center d-inline-flex gap-2 "><i class='bx bxs-chevrons-right'></i>Quality Care, Exceptional Service</p>
                                     </div>
                                 </div>
                             </div>
                             
                         </div>
-                    <h3>Health care is a vital aspect of maintaining overall well-being, encompassing a range of services from preventive care to treatment</h3>
-
-                    <button class="butt"><a href="" class="rounded-pill px-4 py-3 my-4">More About Us <i class='bx bx-plus' ></i></a></button>
+                            <h3>Health care is a vital aspect of maintaining overall well-being, encompassing a range of services from preventive care to treatment</h3>
+                                 <button class="butt"><a href="" class="rounded-pill px-4 py-3 my-4 sm-w-100">More About Us <i class='bx bx-plus' ></i></a></button>
                 </div>
             </div>
         </div>
@@ -283,32 +344,72 @@
 
     <!-- Latest Service Section -->
      <section>
-        <div class="container-fluid border border-2 border-info mt-5 service">
+        <div class="container-fluid my-4 service">
            <h3 class="py-3 px-4 text-center rounded-pill mx-auto">Latest service</h3>
-           <h1 class="text-center mt-4">Compassionate Care Always<br/>
-            There Health First</h1>
+            <h1 class="text-center mt-4">Compassionate Care Always<br/>There Health First</h1>
+            <div class="row ro-bord mt-5 mx-auto rounded-5">
 
-            <div class="row">
-                <div class="col-md-4 card-items cardbtn">
-                    <h2> Care Med Clinic</h2>
-                    <p>Health care is a vital aspect of maintaining overall well-being, encompassing a range</p>
-                    <button class=""><a href="" class="bg-white rounded-pill px-4 py-3 ml-0">Read More<i class='bx bx-plus' ></i> </a></button>
+                <div class="col-md-4 card-items cardbtn my-5">
+                    <h2 class="text-center fs-4"> Care Med Clinic</h2>
+                       <div class="d-inline-flex w-100 my-4 ">
+                            <span class="mx-auto rounded-circle backg-span p-3">
+                                <img width="45"  height="45" src="https://img.icons8.com/external-outline-lafs/64/1A1A1A/external-drugs-medicine-outline-part-2-v2-outline-lafs.png" alt="external-drugs-medicine-outline-part-2-v2-outline-lafs"/>
+                            </span>
+                       </div>
+                    <p class="text-center">Health care is a vital aspect of maintaining overall well-being, encompassing a range</p>
+                    <button class="med w-100 border-0 my-4"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0 mx-auto">Read More<i class='bx bx-plus' ></i> </a></button>
                 </div>
 
-                <div class="col-md-4 card-items cardbtn">
-                    <h2>Vitality Health Solutions</h2>
-                    <p>Health care is a vital aspect of maintaining overall well-being, encompassing a range</p>
-                     <button class=""><a href="" class="bg-white rounded-pill px-4 py-3 ml-0">Read More <i class='bx bx-plus' ></i></a></button>
-                </div>
+                <div class="col-md-4 card-items cardbtn my-5">
+                    <h2 class="text-center fs-4">Vitality Health Solutions</h2>
+                        <div class="d-inline-flex w-100 my-4">
+                            <span class="mx-auto rounded-circle backg-span p-3">
+                                <img width="45" height="45" class="text-white" src="https://img.icons8.com/external-outline-satawat-anukul/64/1A1A1A/external-medical-madical-outline-outline-satawat-anukul-48.png" alt="external-medical-madical-outline-outline-satawat-anukul-48"/>
+                            </span> 
+                        </div>
 
-                <div class="col-md-4 card-items cardbtn">
-                    <h2>WellSpring Wellness Center</h2>
-                    <p>Health care is a vital aspect of maintaining overall well-being, encompassing a range</p>
-                    <button class=""><a href="" class="bg-white rounded-pill px-4 py-3 ml-0">Read More <i class='bx bx-plus' ></i></a></button>
+                        
+                    <p class="text-center">Health care is a vital aspect of maintaining overall well-being, encompassing a range</p>
+                     <button class="med w-100 border-0 mt-4"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0 mx-auto">Read More <i class='bx bx-plus' ></i></a></button>
+                </div>
+              
+                <div class="col-md-4 card-items cardbtn my-5">
+                    <h2 class="text-center fs-4">WellSpring Wellness Center</h2>
+                        <div class="d-inline-flex w-100 my-4">
+                            <span class="mx-auto rounded-circle backg-span p-3">
+                                <img width="45" height="45" src="https://img.icons8.com/external-smashingstocks-hand-drawn-black-smashing-stocks/99/1A1A1A/external-Broken-Bone-halloween-and-scary-characters-smashingstocks-hand-drawn-black-smashing-stocks.png" alt="external-Broken-Bone-halloween-and-scary-characters-smashingstocks-hand-drawn-black-smashing-stocks"/>
+                            </span>
+                        </div>
+                       
+                    <p class="text-center">Health care is a vital aspect of maintaining overall well-being, encompassing a range</p>
+                    <button class="w-100 border-0 med my-4"><a href="" class="bg-white rounded-pill px-4 py-3 mx-auto">Read More <i class='bx bx-plus' ></i></a></button>
                 </div>
             </div>
         </div>
      </section>
+
+     <!-- Marquee Section -->
+       <!-- Marquee Section -->
+     <div class="section">
+        <div class="marqueetwo">
+            <div class="marquee-contenttwo">
+                <div class="marquee-itemtwo">Health Success</div>
+                <span><img width="50" height="50" src="https://img.icons8.com/external-others-pike-picture/50/006d77/external-blood-gastroenterology-and-hepatology-others-pike-picture-2.png" alt="external-blood-gastroenterology-and-hepatology-others-pike-picture-2"/></span>
+                <div class="marquee-itemtwo">Creative Design</div>
+                <span><img width="64" height="64" src="https://img.icons8.com/external-xnimrodx-lineal-xnimrodx/64/006d77/external-glucometer-pharmacy-xnimrodx-lineal-xnimrodx.png" alt="external-glucometer-pharmacy-xnimrodx-lineal-xnimrodx"/></span>
+                <div class="marquee-itemtwo">Bootstrap Powered</div>
+                <span><img width="64" height="64" src="https://img.icons8.com/external-wanicon-lineal-wanicon/64/006d77/external-blood-transfusion-medical-wanicon-lineal-wanicon-1.png" alt="external-blood-transfusion-medical-wanicon-lineal-wanicon-1"/></span>
+                <div class="marquee-itemtwo">Health Services</div>
+                <span> <img width="50" height="50" src="https://img.icons8.com/external-others-pike-picture/50/006d77/external-injection-injections-others-pike-picture-3.png" alt="external-injection-injections-others-pike-picture-3"/></span>
+                <div class="marquee-itemtwo">Wellness Center</div>
+                <span><img width="64" height="64" src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/006d77/external-tooth-paste-medical-kiranshastry-lineal-kiranshastry.png" alt="external-tooth-paste-medical-kiranshastry-lineal-kiranshastry"/></span>
+                <div class="marquee-itemtwo">Medical Group</div>
+                <div class="marquee-itemtwo">Digital Service</div>
+                <div class="marquee-itemtwo">Unlock a 20% savings on your first medical service</div>
+            </div>
+        </div>
+     </div>
+    <!-- Closed Marqueen Section -->
     
     <!-- Custom Script for Progress Bar -->
     <script>
