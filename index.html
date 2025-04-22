@@ -4,16 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="tablist.css"> -->
+    <!-- <link rel="stylesheet" href="nav.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://img.icons8.com/external-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto/64/external-plaster-medical-and-pharmacy-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <title>Document</title>
+
+    <!-- style -->
+    <style>
+      .tab-content {
+        position: relative;
+        /* height: 900px; */
+        overflow: hidden;
+        background-color:#ffffff;
+        
+      }
+      
+      .pane {
+        position: absolute;
+        /* margin-left: auto !important; */
+        /* margin-right: auto !important; */
+        /* width: 96%; */
+        height: 1200px;
+        transition: all 0.8s ease-in-out;
+      }
+      
+      .pane.fade:not(.show) {
+        display: block !important;
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      
+      .pane.active.show {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      
+      .pane.fade.prev-tab:not(.show) {
+        transform: translateX(-100%);
+      }
+
+      .tab-pane.active .tab-image {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      .tab-image:hover {
+        border: 2px solid blue;
+        transition: all 0.8s ease-in-out;
+      }
+      
+      .pane:not(.active) .tab-image {
+        transform: scale(0.9);
+        opacity: 0.7;
+      }
+      
+      .nav-tab .nav-link {
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .nav-tab {
+          width: 60%;
+      }
+
+      .nav-tab button {
+          border: none !important;
+      }
+
+      .nav-tab button:hover {
+          border-bottom: 2px solid transparent !important;
+      }
+      
+      /* .nav-tab .nav-link.active {
+        font-weight: bold;
+        border-top-width: 2px !important;
+        background-color: aqua;
+      }
+       */
+      /* .nav-tab .nav-link:not(.active):hover {
+        background-color: rgba(17, 58, 243, 0.925);
+      } */
+      
+      .tab-icon {
+        margin-right: 8px;
+      }
+      
+      .content-wrapper {
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-radius: 0 0 0.25rem 0.25rem;
+      }
+
+      /* @media screen and (max-width : 768px) {
+          .nav-tab {
+          width: 90%;
+          display: flex;
+          justify-content:center;
+          align-items: center;
+      }
+
+      } */
+    </style>
+     <!-- Close style -->
+
 </head>
 <body>
     <div class="container-fluid bg main-cointainer">
         <!-- Large Screen -->
-        <nav class="navbar navbar-expand-lg fixed-top">
+        <nav class="navbar navbar-expand-lg fixed-top py-4 px-4">
             <a href=""><img src="./images/logo-2.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                      <span class="text-white"></span>
@@ -22,7 +125,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav mx-auto gap-3">
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown home-items">
                         <a class="nav-link dropdown-toggle active" href="#"  data-bs-toggle="dropdown" aria-expanded="false">
                           Home
                         </a>
@@ -33,11 +136,11 @@
                         </ul>
                     </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item home-items">
                             <a class="nav-link d-inline-flex" href="#">About Us</a>
                         </li>
  
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown home-items">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
@@ -46,7 +149,7 @@
                         </ul>
                   </li>
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown home-items">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Service</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
@@ -55,7 +158,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown home-items">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
@@ -64,7 +167,7 @@
                         </ul>
                     </li>
  
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown home-items">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Blog
                         </a>
@@ -75,7 +178,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item home-items">
                         <a class="nav-link" href="#">Contact</a>
                     </li>
  
@@ -244,17 +347,6 @@
                     </div>
                 </div>
             </div>
-
-          
-            <!-- Content section -->
-            <!-- <div class="container my-5">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <h2>Welcome to Our Website</h2>
-                        <p class="lead">Explore our featured content in the animated slider above.</p>
-                    </div>
-                </div>
-            </div> -->
           </div>
         
     </div>
@@ -346,7 +438,7 @@
      <section>
         <div class="container-fluid my-4 service">
            <h3 class="py-3 px-4 text-center rounded-pill mx-auto">Latest service</h3>
-            <h1 class="text-center mt-4">Compassionate Care Always<br/>There Health First</h1>
+            <h1 class="text-center mt-4" data-aos="fade-right">Compassionate Care Always<br/>There Health First</h1>
             <div class="row ro-bord mt-5 mx-auto rounded-5">
 
                 <div class="col-md-4 card-items cardbtn my-5">
@@ -393,70 +485,217 @@
      <div class="section">
         <div class="marqueetwo">
             <div class="marquee-contenttwo">
+                <span class="mx-3"><span><img width="64" height="64" src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/006d77/external-tooth-paste-medical-kiranshastry-lineal-kiranshastry.png" alt="external-tooth-paste-medical-kiranshastry-lineal-kiranshastry"/></span></span>
                 <div class="marquee-itemtwo">Health Success</div>
-                <span><img width="50" height="50" src="https://img.icons8.com/external-others-pike-picture/50/006d77/external-blood-gastroenterology-and-hepatology-others-pike-picture-2.png" alt="external-blood-gastroenterology-and-hepatology-others-pike-picture-2"/></span>
+                <span class="mx-3"><img width="50" height="50" src="https://img.icons8.com/external-others-pike-picture/50/006d77/external-blood-gastroenterology-and-hepatology-others-pike-picture-2.png" alt="external-blood-gastroenterology-and-hepatology-others-pike-picture-2"/></span>
                 <div class="marquee-itemtwo">Creative Design</div>
-                <span><img width="64" height="64" src="https://img.icons8.com/external-xnimrodx-lineal-xnimrodx/64/006d77/external-glucometer-pharmacy-xnimrodx-lineal-xnimrodx.png" alt="external-glucometer-pharmacy-xnimrodx-lineal-xnimrodx"/></span>
+                <span class="mx-3"><img width="64" height="64" src="https://img.icons8.com/external-xnimrodx-lineal-xnimrodx/64/006d77/external-glucometer-pharmacy-xnimrodx-lineal-xnimrodx.png" alt="external-glucometer-pharmacy-xnimrodx-lineal-xnimrodx"/></span>
                 <div class="marquee-itemtwo">Bootstrap Powered</div>
-                <span><img width="64" height="64" src="https://img.icons8.com/external-wanicon-lineal-wanicon/64/006d77/external-blood-transfusion-medical-wanicon-lineal-wanicon-1.png" alt="external-blood-transfusion-medical-wanicon-lineal-wanicon-1"/></span>
+                <span class="mx-3"><img width="64" height="64" src="https://img.icons8.com/external-wanicon-lineal-wanicon/64/006d77/external-blood-transfusion-medical-wanicon-lineal-wanicon-1.png" alt="external-blood-transfusion-medical-wanicon-lineal-wanicon-1"/></span>
                 <div class="marquee-itemtwo">Health Services</div>
-                <span> <img width="50" height="50" src="https://img.icons8.com/external-others-pike-picture/50/006d77/external-injection-injections-others-pike-picture-3.png" alt="external-injection-injections-others-pike-picture-3"/></span>
+                <span class="mx-3"> <img width="64" height="64" src="https://img.icons8.com/external-others-pike-picture/50/006d77/external-injection-injections-others-pike-picture-3.png" alt="external-injection-injections-others-pike-picture-3"/></span>
                 <div class="marquee-itemtwo">Wellness Center</div>
-                <span><img width="64" height="64" src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/006d77/external-tooth-paste-medical-kiranshastry-lineal-kiranshastry.png" alt="external-tooth-paste-medical-kiranshastry-lineal-kiranshastry"/></span>
+                <span class="mx-3"><img width="64" height="64" src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/006d77/external-tooth-paste-medical-kiranshastry-lineal-kiranshastry.png" alt="external-tooth-paste-medical-kiranshastry-lineal-kiranshastry"/></span>
                 <div class="marquee-itemtwo">Medical Group</div>
+                <span class="mx-3"><span><img width="64" height="64" src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/006d77/external-tooth-paste-medical-kiranshastry-lineal-kiranshastry.png" alt="external-tooth-paste-medical-kiranshastry-lineal-kiranshastry"/></span></span>
                 <div class="marquee-itemtwo">Digital Service</div>
-                <div class="marquee-itemtwo">Unlock a 20% savings on your first medical service</div>
             </div>
         </div>
      </div>
     <!-- Closed Marqueen Section -->
-    
-    <!-- Custom Script for Progress Bar -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const carousel = document.getElementById('animatedSlider');
-            const progressBar = document.getElementById('slider-progress');
-            const slideInterval = 6000; // Match this with data-bs-interval
-            let startTime;
-            let animationFrame;
-            
-            // Function to update progress bar
-            function updateProgress(timestamp) {
-                if (!startTime) startTime = timestamp;
-                const elapsed = timestamp - startTime;
-                const progress = Math.min(elapsed / slideInterval * 100, 100);
+
+
+    <!-- Latest Project Section -->
+
+    <div class="container-fluid prio mt-5">
+      <h4 class="mx-auto text-center rounded-pill py-2 px-2 mt-3">Latest Project</h4>
+            <h1 class="text-center" data-aos="fade-right">Your Wellness Our Priority <br/> Healthier Lives</h1>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-12">
+          <!-- <div class="card shadow"> -->
+            <div class="card-body p-0 border border-2 border-danger w-100">
+              <!-- Tab Navigation -->
+              <ul class="nav nav-tab mx-auto mt-5" id="animatedTabBar" role="tablist">
+                <li class="nav-items" role="presentation">
+                  <button class="nav-link active latest" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                    <h3 class="rounded-pill py-2 px-3">View All</h3>
+                  </button>
+                </li>
+                <li class="nav-items" role="presentation">
+                  <button class="nav-link latest" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                    <h3 class="rounded-pill py-2 px-3">Body Surgery</h3>
+                  </button>
+                </li>
+                <li class="nav-items" role="presentation">
+                  <button class="nav-link latest" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button" role="tab" aria-controls="messages" aria-selected="false">
+                    <h3 class="rounded-pill py-2 px-3">Dental Care</h3>
+                  </button>
+                </li>
+                <li class="nav-items" role="presentation">
+                  <button class="nav-link latest" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab" aria-controls="" aria-selected="false">
+                    <h3 class="rounded-pill py-2 px-3">Allergic Care</h3>
+                  </button>
+                </li>
+                <li class="nav-items" role="presentation">
+                  <button class="nav-link latest" id="eyescare-tab" data-bs-toggle="tab" data-bs-target="#eyescare" type="button" role="tab" aria-controls="" aria-selected="false">
+                    <h3 class="rounded-pill py-2 px-3">Eye Care</h3>
+                  </button>
+                </li>
+
+              </ul>
+              
+              <!-- Tab Content -->
+              <div class="tab-content" id="animatedTabContent border border-2 border-info">
+                <div class="tab-pane row fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <div class="images-box boder-2 border-success">
+                    <img src="./images/project-2-1.jpg" alt="Home" class="tab-image t-image rounded-5">
+                    <img  src="./images/project-2-3 (1).jpg" alt="home" class="tab-image rounded-5">
+                    <img src="./images/project-2-5.jpg" alt="home" class="tab-image rounded-5">
+                    <img src="./images/project-2-4.jpg" alt="Home" class="tab-image rounded-5">
+                    <img  src="./images/project-2-5.jpg" alt="home" class="tab-image rounded-5">
+                    <img src="./images/project-2-6.jpg" alt="home" class="tab-image rounded-5">
+                  </div>
+                </div>
                 
-                progressBar.style.width = progress + '%';
+                <div class="tab-pane images-box2 fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                  <img src="./images/project-2-2 (1).jpg" alt="Profile" class="tab-image rounded-5">
+                  <img src="./images/project-2-4.jpg" alt="profile" class="tab-image rounded-5">
+                  <img src="./images/project-2-5.jpg" alt="profile" class="tab-image rounded-5">
+                  <img src="./images/project-2-4.jpg" alt="profile" class="tab-image rounded-5">
+                  <img src="" alt="" class="tab-image rounded-5">
+                  <img src="./images/project-2-6.jpg" alt="Settings" class="tab-image rounded-5">
+                </div>
                 
-                if (elapsed < slideInterval) {
-                    animationFrame = requestAnimationFrame(updateProgress);
-                }
-            }
-            
-            // Start progress animation
-            animationFrame = requestAnimationFrame(updateProgress);
-            
-            // Reset progress on slide change
-            carousel.addEventListener('slide.bs.carousel', function() {
-                cancelAnimationFrame(animationFrame);
-                progressBar.style.width = '0%';
-                startTime = null;
-                animationFrame = requestAnimationFrame(updateProgress);
-            });
-            
-            // Pause on hover
-            carousel.addEventListener('mouseenter', function() {
-                cancelAnimationFrame(animationFrame);
-            });
-            
-            // Resume on mouse leave
-            carousel.addEventListener('mouseleave', function() {
-                startTime = null;
-                animationFrame = requestAnimationFrame(updateProgress);
-            });
-        });
-    </script>
-   
+                <div class="tab-pane fade images-box3" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+                  <img src="./images/project-2-3 (1).jpg" alt="Messages" class="tab-image rounded-5">
+                  <img src="./images/project-2-2.jpg" alt="Messages" class="tab-image rounded-5">
+                </div>
+                
+                <div class="tab-pane fade images-box4" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                  <img src="./images/project-2-1.jpg" alt="Settings" class="tab-image rounded-5">
+                  <img src="./images/project-2-4.jpg" alt="Settings" class="tab-image rounded-5">
+                  <img src="./images/project-2-3 (1).jpg" alt="Settings" class="tab-image rounded-5">
+                  <img src="./images/project-2-2.jpg" alt="Messages" class="tab-image rounded-5">
+                  <img src="./images/project-2-5.jpg" alt="Messages" class="tab-image rounded-5">
+                  <img src="./images/project-2-6.jpg" alt="Messages" class="tab-image rounded-5">
+                </div>
+
+                <div class="tab-pane fade images-box5" id="eyescare" role="tabpanel" aria-labelledby="eyescare-tab">
+                  <img src="./images/project-2-5.jpg" alt="eyescare" class="tab-image rounded-5">
+                  <img src="./images/project-2-4.jpg" alt="eyescare" class="tab-image rounded-5">
+                  <img src="./images/project-2-6.jpg" alt="eyescare" class="tab-image rounded-5">
+                </div>
+              </div>
+            </div>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+
+     <!--Client Review Section  -->
+     <div class="section-numb">
+      <div class="container-fluid mt-5">
+        <div class="row big-numb mx-auto shadow rounded-5">
+          <div class="numb-container d-flex justify-content-between mx-auto text-center">
+            <div class="number-plus d-inline-flex px-4 py-3 rounded-4 justify-content-between col-12">
+              <h1>600+</h1>
+              <p>Complte<br/>
+                Project</p>
+            </div>
+
+              <div class="number-plus d-inline-flex rounded-4 px-4 py-3 col-12 justify-content-between">
+                <h1>200+</h1>
+                <p>Team<br/>
+                  Member</p>
+              </div>
+
+            <div class="number-plus d-inline-flex rounded-4 px-4 py-3 col-12 justify-content-between">
+              <h1>500+</h1>
+              <p>Clients<br/>
+                Reviews</p>
+            </div>
+
+            <div class="number-plus d-inline-flex rounded-4 px-4 py-3 col-12 justify-content-between">
+              <h1>50+</h1>
+              <p>Winning<br/>
+                award</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+     </div>
+     <!-- Close Client Review Section -->
+
+     <!-- Chose Us Section -->
+     <section class="py-5 overflow-hidden mx-auto" style="margin-top: 80px; width: 96%">
+      <!-- <div class="container"> -->
+          <div class="row align-items-center">
+              <div class="col-lg-6 chose">
+                <p class="rounded-pill py-1 px-3 text-center chose-p">Why Chose Us</p>
+                  <h2 data-aos="fade-right">Health care is maintenance <br/> or improvement</h2>
+                  <h3 class="lead" data-aos="fade-right" data-aos-delay="200">Health care is a vital aspect of maintaining overall well-being, encompassing a range of services from preventive care to treatment.</h3>
+                  
+                  <div class="d-flex align-items-center stagger-slide-up stagger-item mt-4">
+                      <div class="" style="width: 100%">
+                        <div class="d-inline-flex justify-content-between" style="width: 90%" >
+                          <h5 class="mb-0">Vitality Health Solutions</h5>
+                          <p class="mb-0 text-muted">90%</p>
+                        </div>
+                        <div class="bar-container rounded-pill w-100 mt-2">
+                          <div class="bar-bottom rounded-pill" style="width: 90%"></div>
+                        </div>
+                      </div>
+                  </div>
+                  
+                  <div class="d-flex align-items-center stagger-slide-up stagger-item mt-4">
+                      <div class="" style="width: 100%">
+                        <div class="d-inline-flex justify-content-between" style="width: 80%">
+                          <h5 class="mb-0">WellSpring Wellness Center</h5>
+                          <p class="mb-0 text-muted">80%</p>
+                        </div>
+                        <div class="bar-container rounded-pill w-100 mt-2">
+                          <div class="bar-bottom rounded-pill" style="width: 80%"></div>
+                        </div> 
+                      </div>   
+                  </div>
+                  
+                  <div class="d-flex align-items-center mb-3 stagger-slide-up stagger-item chose">
+                    <h3 class="mb-0 text-muted">Health care is a vital aspect of maintaining overall well-being, encompassing a range of services from preventive care to treatment</h3>
+                  </div>
+                  
+                  <div class="d-md-inline-flex justify-content-between align-items-center mb-3 stagger-slide-up stagger-item" style="width: 70%;">
+                    <button class="butt"><a href="" class="rounded-pill px-4 py-3 my-4 sm-w-100">Read More<i class='bx bx-plus' ></i></a></button>
+                      <!-- <div class=""> -->
+                          <div class="phone-icon mb-0 text-muted d-inline-flex align-items-center justify-content-between" style="width: 230px">
+                             <i class='bx bxs-phone rounded-circle text-center p-3'></i>
+                             <p>Phone Number <br/><a href="#">012 345 678 9101</a></p> 
+                          </div>
+                      <!-- </div> -->
+                  </div>
+              </div>
+
+              <div class="col-lg-6 position-relative" data-aos="fade-left" data-aos-delay="500">
+                  <div class="chose-image mx-md-auto" style="z-index: -1;"></div>
+                  <img src="./images/why-choose-one-img-1.png" alt="Content image" class="chose-over position-absolute">
+               </div>
+          </div>
+      <!-- </div> -->
+  </section>
+      <!--Closed Chose Us Section -->
+
+      <!-- Our Team Member -->
+       <section class="container-fluid border border-2 border-danger">
+          <p class="rounded-pill py-1 px-3 text-center chose-p">Our Team Member</p>
+          <h2 data-aos="fade-right">Trust in Health Caring Every<br/>Step Heal with Heart</h2>
+       </section>
+       <!-- Closed Our Team member -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="./carousel.js"></script>
+    <script src="./tablist.js"></script>
+    <script src="./stagger-slide.js"></script>
 </body>
 </html>
