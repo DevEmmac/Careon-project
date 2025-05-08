@@ -1,701 +1,1260 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="tablist.css"> -->
-    <!-- <link rel="stylesheet" href="nav.css"> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://img.icons8.com/external-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto/64/external-plaster-medical-and-pharmacy-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="tablist.css"> -->
+  <!-- <link rel="stylesheet" href="nav.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://img.icons8.com/external-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto/64/external-plaster-medical-and-pharmacy-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <title>Document</title>
 
-    <!-- style -->
-    <style>
-      .tab-content {
-        position: relative;
-        /* height: 900px; */
-        overflow: hidden;
-        background-color:#ffffff;
-        
-      }
-      
-      .pane {
-        position: absolute;
-        /* margin-left: auto !important; */
-        /* margin-right: auto !important; */
-        /* width: 96%; */
-        height: 1200px;
-        transition: all 0.8s ease-in-out;
-      }
-      
-      .pane.fade:not(.show) {
-        display: block !important;
-        opacity: 0;
-        transform: translateX(100%);
-      }
-      
-      .pane.active.show {
-        opacity: 1;
-        transform: translateX(0);
-      }
-      
-      .pane.fade.prev-tab:not(.show) {
-        transform: translateX(-100%);
-      }
+  <!-- style -->
+  <style>
+    .tab-content {
+      position: relative;
+      /* height: 900px; */
+      overflow: hidden;
+      background-color: #ffffff;
 
-      .tab-pane.active .tab-image {
-        transform: scale(1);
-        opacity: 1;
-      }
+    }
 
-      .tab-image:hover {
-        border: 2px solid blue;
-        transition: all 0.8s ease-in-out;
-      }
-      
-      .pane:not(.active) .tab-image {
-        transform: scale(0.9);
-        opacity: 0.7;
-      }
-      
-      .nav-tab .nav-link {
-        position: relative;
-        transition: all 0.3s ease;
-      }
+    .pane {
+      position: absolute;
+      /* margin-left: auto !important; */
+      /* margin-right: auto !important; */
+      /* width: 96%; */
+      height: 1300px;
+      transition: all 0.8s ease-in-out;
+    }
 
-      .nav-tab {
-          width: 60%;
-      }
+    .pane.fade:not(.show) {
+      display: block !important;
+      opacity: 0;
+      transform: translateX(100%);
+    }
 
-      .nav-tab button {
-          border: none !important;
-      }
+    .pane.active.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
 
-      .nav-tab button:hover {
-          border-bottom: 2px solid transparent !important;
-      }
-      
-      /* .nav-tab .nav-link.active {
+    .pane.fade.prev-tab:not(.show) {
+      transform: translateX(-100%);
+    }
+
+    .tab-pane.active .tab-image {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .tab-image:hover {
+      border: 2px solid blue;
+      transition: all 0.8s ease-in-out;
+    }
+
+    .pane:not(.active) .tab-image {
+      transform: scale(0.9);
+      opacity: 0.7;
+    }
+
+    .nav-tab .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-tab {
+      width: 60%;
+    }
+
+    .nav-tab button {
+      border: none !important;
+    }
+
+    .nav-tab button:hover {
+      border-bottom: 2px solid transparent !important;
+    }
+
+    /* .nav-tab .nav-link.active {
         font-weight: bold;
         border-top-width: 2px !important;
         background-color: aqua;
       }
        */
-      /* .nav-tab .nav-link:not(.active):hover {
+    /* .nav-tab .nav-link:not(.active):hover {
         background-color: rgba(17, 58, 243, 0.925);
       } */
-      
-      .tab-icon {
-        margin-right: 8px;
-      }
-      
-      .content-wrapper {
-        padding: 15px;
-        background-color: #f9f9f9;
-        border-radius: 0 0 0.25rem 0.25rem;
-      }
 
-      /* @media screen and (max-width : 768px) {
-          .nav-tab {
-          width: 90%;
-          display: flex;
-          justify-content:center;
-          align-items: center;
-      }
+    .tab-icon {
+      margin-right: 8px;
+    }
 
-      } */
-    </style>
-     <!-- Close style -->
+    .content-wrapper {
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-radius: 0 0 0.25rem 0.25rem;
+    }
+  </style>
+  <!-- Close style -->
 
 </head>
+
 <body>
-    <div class="container-fluid bg main-cointainer">
-        <!-- Large Screen -->
-        <nav class="navbar navbar-expand-lg fixed-top py-4 px-4">
-            <a href=""><img src="./images/logo-2.png" alt=""></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                     <span class="text-white"></span>
-                </button>
+  <div class="container-fluid bg main-cointainer">
+    <!-- Large Screen -->
+    <nav class="navbar navbar-expand-lg fixed-top py-4 px-4">
+      <a href=""><img src="./images/logo-2.png" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="text-white"></span>
+      </button>
 
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav mx-auto gap-3">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mx-auto gap-3">
 
-                    <li class="nav-item dropdown home-items">
-                        <a class="nav-link dropdown-toggle active" href="#"  data-bs-toggle="dropdown" aria-expanded="false">
-                          Home
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
+          <li class="nav-item dropdown home-items">
+            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
 
-                        <li class="nav-item home-items">
-                            <a class="nav-link d-inline-flex" href="#">About Us</a>
-                        </li>
- 
-                    <li class="nav-item dropdown home-items">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                  </li>
+          <li class="nav-item home-items">
+            <a class="nav-link d-inline-flex" href="#">About Us</a>
+          </li>
 
-                    <li class="nav-item dropdown home-items">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Service</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
+          <li class="nav-item dropdown home-items">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Pages</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
 
-                    <li class="nav-item dropdown home-items">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
- 
-                    <li class="nav-item dropdown home-items">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Blog
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
+          <li class="nav-item dropdown home-items">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Service</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
 
-                    <li class="nav-item home-items">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
- 
-                </ul>
+          <li class="nav-item dropdown home-items">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Shop</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown home-items">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Blog
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item home-items">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="plus d-none d-lg-block">
+        <a href="#" class="btn bg-white rounded-pill px-5 py-3">Get in touch<img src="./images/plus.svg" alt="plus"></a>
+      </div>
+    </nav>
+
+
+    <!-- Responsive -->
+    <div class="smallscreen">
+      <div class="screen-sm w-100 d-flex justify-content-between mt-5">
+        <a class="ml-2" href="#"><img src="./images/logo-2.png" alt=""></a>
+        <button class="btn menu-icon text-white fs-2 p-0" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i class='bx bx-menu'></i></button>
+      </div>
+
+      <!-- <div class=" bg-info w-100 border border-2 border-danger"> -->
+      <div class="offcanvas offcanvas-start border border-2 border-info can-vas w-100" tabindex="-1"
+        id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="layer2">
+          <div class="offcanvas-header d-inline-flex">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel"><img src="./images/logo-2.png"></h5>
+            <button type="button" class="btn border-0 text-white fs-2" data-bs-dismiss="offcanvas" aria-label=""><i
+                class='bx bx-x'></i></button>
+          </div>
+          <div class="offcanvas-body border border-2 border-danger ">
+
+            <div class="dropdown mt-3">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
             </div>
 
-              <div class="plus d-none d-lg-block">
-                <a href="#" class="btn bg-white rounded-pill px-5 py-3">Get in touch<img src="./images/plus.svg" alt="plus"></a>
-              </div>
-          </nav>
-
-
-            <!-- Responsive -->
-            <div class="smallscreen">
-                <div class="screen-sm w-100 d-flex justify-content-between mt-5">
-                    <a class="ml-2" href="#"><img src="./images/logo-2.png" alt=""></a>
-                    <button class="btn menu-icon text-white fs-2 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i class='bx bx-menu'></i></button>
-                </div>
-                 
-                <!-- <div class=" bg-info w-100 border border-2 border-danger"> -->
-                    <div class="offcanvas offcanvas-start border border-2 border-info can-vas w-100" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                        <div class="layer2">
-                            <div class="offcanvas-header d-inline-flex">
-                                <h5 class="offcanvas-title" id="offcanvasExampleLabel"><img src="./images/logo-2.png"></h5>
-                                <button type="button" class="btn border-0 text-white fs-2" data-bs-dismiss="offcanvas" aria-label=""><i class='bx bx-x'></i></button>
-                            </div>
-                              <div class="offcanvas-body border border-2 border-danger ">
-
-                                <div class="dropdown mt-3">
-                                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                    Dropdown button
-                                  </button>
-                                  <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                  </ul>
-                                </div>
-
-                                <div class="dropdown mt-3">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                      Dropdown button
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                      <li><a class="dropdown-item" href="#">Action</a></li>
-                                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                  </div>
-
-                                  <div class="dropdown mt-3">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                      Dropdown button
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                      <li><a class="dropdown-item" href="#">Action</a></li>
-                                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                  </div>
-
-                                  <div class="dropdown mt-3">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                      Dropdown button
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                      <li><a class="dropdown-item" href="#">Action</a></li>
-                                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                  </div>
-
-                                  <div class="dropdown mt-3">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                      Dropdown button
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                      <li><a class="dropdown-item" href="#">Action</a></li>
-                                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                  </div>
-                              </div>
-                        </div> 
-                    </div>
-                <!-- </div> -->
+            <div class="dropdown mt-3">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
             </div>
-            
-          <!-- slider -->
-          <div class="container-fluid mb-5">
-            <div class="slider-container">
-                <!-- Progress bar -->
-                <!-- <div class="progress-bar-container">
-                    <div class="progress-bar" id="slider-progress"></div>
-                </div>
-                 -->
-                <!-- Bootstrap Carousel -->
-                <div id="animatedSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
-                    <!-- Indicators -->
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#animatedSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#animatedSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#animatedSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    
-                    <!-- Carousel items -->
-                    <div class="carousel-inner">
-                        <!-- Slide 1 -->
-                        <div class="carousel-item active">
-                            <div class="text-overlay">
-                                <h4 class="slide-badge health">Health Care</h4>
-                                <h2 class="slide-title display-4 mb-4"><span class="">Exceptional Health</span> Always There Top</h2>
-                                <p class="slide-description lead mb-4">Health care is a vital aspect of maintaining overall well-being,encompassing a range of service from preventive</p>
-                                <div class="plus-animation mt-4 d-flex align-items-center">
-                                    <button class="more-slide more col-sm-5"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0">More About Us <img src="./images/plus.svg" alt="plus"></a></button>
-                                    <button class="more-slide"><a href="" class="more-slide2"><i class='bx bx-play' ></i></a></button>
-                                    <button class="more-slide text-white third-slide">Watch More</button>
-                                </div>
-                            </div>
 
-                            <div class="carousel-image" >
-                                <img src="./images/main-slider-img-1.jpg" alt="Nature"> 
-                            </div>
-                            
-                        </div>
-                        
-                        <!-- Slide 2 -->
-                        <div class="carousel-item">
-                            <div class="text-overlay">
-                                    <h4 class="slide-badge health">Health Care</h4>
-                                    <h2 class="slide-title display-4 mb-4"><span class="">Exceptional Health</span> Always There Top</h2>
-                                    <p class="slide-description lead mb-4">Health care is a vital aspect of maintaining overall well-being,encompassing a range of service from preventive</p>
-                                    <div class="plus-animation mt-4 d-inline-flex align-items-center">
-                                        <button class="more-slide more"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0">More About Us <img src="./images/plus.svg" alt="plus"></a></button>
-                                        <button class="more-slide"><a href="" class="more-slide2"><i class='bx bx-play' ></i></a></button>
-                                        <button class="more-slide text-white third-slide">Watch More</button>
-                                    </div>
-                            </div>
+            <div class="dropdown mt-3">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </div>
 
-                            <div class="carousel-image">
-                                <img src="./images/main-slider-img-2.jpg" alt="City">
-                            </div>
-                           
-                           
-                        </div>
-                        
-                        <!-- Slide 3 -->
-                        <div class="carousel-item">
-                            <div class="text-overlay">
-                                    <h4 class="slide-badge health">Health Care</h4>
-                                    <h2 class="slide-title display-4 mb-4"><span class="">Exceptional Health</span> Always There Top</h2>
-                                    <p class="slide-description lead mb-4">Health care is a vital aspect of maintaining overall well-being,encompassing a range of service from preventive</p>
-                                    <div class="plus-animation mt-4 d-inline-flex align-items-center sm-d-block">
-                                        <button class="more-slide more"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0">More About Us <img src="./images/plus.svg" alt="plus"></a></button>
-                                        <button class="more-slide"><a href="" class="more-slide2"><i class='bx bx-play' ></i></a></button>
-                                        <button class="more-slide text-white third-slide">Watch More</button>
-                                    </div>
-                    
-                            </div>
-                            <div class="carousel-image">
-                                <img src="./images/main-slider-img-3.jpg" alt="Technology">
-                            </div>
-                            
-                           
-                        </div>
-                    </div>
-                </div>
+            <div class="dropdown mt-3">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown mt-3">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
             </div>
           </div>
-        
+        </div>
+      </div>
+      <!-- </div> -->
     </div>
 
+    <!-- slider -->
+    <div class="container-fluid mb-5">
+      <div class="slider-container">
+        <!-- Bootstrap Carousel -->
+        <div id="animatedSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+          <!-- Indicators -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#animatedSlider" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#animatedSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#animatedSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
 
-    <!-- Marquee Section -->
-     <div class="section">
-        <div class="marquee">
-            <div class="marquee-content">
-                <div class="marquee-item">Unlock a 20% savings on your first medical service.</div>
-                <div class="marquee-item">Creative Design</div>
-                <div class="marquee-item">Bootstrap Powered</div>
-                <div class="marquee-item">Responsive Layout</div>
-                <div class="marquee-item">Smooth Animations</div>
-                <div class="marquee-item">Unlock a 20% savings on your first medical service</div>
-                <div class="marquee-item">Unlock a 20% savings on your first medical service</div>
-                <div class="marquee-item">Unlock a 20% savings on your first medical service</div>
-            </div>
-        </div>
-     </div>
-    <!-- Closed Marqueen Section -->
-
-    <!-- Section for About -->
-    <div class="container-fluid mb-4">
-        <div class="about-container mx-auto rounded-5 d-flex justify-content-between">
-            <div class="row">
-                <div class="col-md-6 mx-auto about-img">
-                    <img src="./images/about-two-img-1.jpg" class="rounded-start-5 rounded-sm-5 mx-auto" alt="">
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="text-overlay">
+                <h4 class="slide-badge health">Health Care</h4>
+                <h2 class="slide-title display-4 mb-4"><span class="">Exceptional Health</span> Always There Top</h2>
+                <p class="slide-description lead mb-4">Health care is a vital aspect of maintaining overall
+                  well-being,encompassing a range of service from preventive</p>
+                <div class="plus-animation mt-4 d-flex align-items-center">
+                  <button class="more-slide more col-sm-5"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0">More
+                      About Us <img src="./images/plus.svg" alt="plus"></a></button>
+                  <button class="more-slide"><a href="" class="more-slide2"><i class='bx bx-play'></i></a></button>
+                  <button class="more-slide text-white third-slide">Watch More</button>
                 </div>
-                <div class="col-md-6 about mx-auto mt-3 border-2 border-danger">
-                    <h2 class="rounded-pill px-4 py-2 fs-5">About Us</h2>
-                    <h1>Your Wellness Our Priority Empowering Healthie</h1>
-                        <div class="">
-                            <div class="d-inline-flex align-items-center mt-5">   
-                                <div class="wellness mx-auto rounded-circle">
-                                    <img width="45" height="45" src="https://img.icons8.com/external-sbts2018-outline-sbts2018/58/external-bandage-emergencies-set-sbts2018-outline-sbts2018.png" alt="external-bandage-emergencies-set-sbts2018-outline-sbts2018"/> 
-                                </div>
+              </div>
 
-                                  <div class="icon2">
-                                    <h3 class="">Your Wellness Our Priority</h1>
-                                    <p>Health care is a vital aspect of maintaining overall well-being, encompassing a range of services from preventive care to treatment</p>
-                                  </div> 
-                                 
-                            </div>   
+              <div class="carousel-image">
+                <img src="./images/main-slider-img-1.jpg" alt="Nature">
+              </div>
 
-                            <div class="d-inline-flex align-items-center mt-3">
-                                <div class="wellness mx-auto rounded-circle">
-                                    <img width="45" height="45" src="https://img.icons8.com/external-sbts2018-outline-sbts2018/58/external-bandage-emergencies-set-sbts2018-outline-sbts2018.png" alt="external-bandage-emergencies-set-sbts2018-outline-sbts2018"/>
-                                </div>
-                                <div class="icon2">
-                                    <h3>Empowering Healthier Lives</h1> 
-                                    <p>Health care is a vital aspect of maintaining overall well-being, encompassing a range of services from preventive care to treatment</p>
-                                </div>    
-                            </div>
-                        </div>
-                            <img src="./images/about-two-img-2.jpg" alt="" class="w-100 rounded-4 mt-4" >
-                       <div class="w-100 mt-5">
-                            <div class="">
-                                <div class="row col-sm"> 
-                                    <div class="col-sm col-md-6 row-p text-start">
-                                        <p class="align-items-center d-inline-flex gap-2"> <i class='bx bxs-chevrons-right'></i>Where Health Matters Most</p>
-                                    </div>
-
-                                    <div class="col-sm col-md-6 row-p text-start">
-                                        <p class="align-items-center d-inline-flex gap-2"><i class='bx bxs-chevrons-right'></i>Caring for You, Always</p>
-                                    </div>
-
-                                    <div class="col-sm col-md-6 row-p text-start">
-                                        <p class="align-items-center d-inline-flex gap-2"><i class='bx bxs-chevrons-right'></i>Enhancing Lives Through Care</p>
-                                    </div>
-
-                                    <div class="col-sm col-md-6 ml-0 row-p text-start">
-                                        <p class="align-items-center d-inline-flex gap-2 "><i class='bx bxs-chevrons-right'></i>Quality Care, Exceptional Service</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                            <h3>Health care is a vital aspect of maintaining overall well-being, encompassing a range of services from preventive care to treatment</h3>
-                                 <button class="butt"><a href="" class="rounded-pill px-4 py-3 my-4 sm-w-100">More About Us <i class='bx bx-plus' ></i></a></button>
-                </div>
             </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="text-overlay">
+                <h4 class="slide-badge health">Health Care</h4>
+                <h2 class="slide-title display-4 mb-4"><span class="">Exceptional Health</span> Always There Top</h2>
+                <p class="slide-description lead mb-4">Health care is a vital aspect of maintaining overall
+                  well-being,encompassing a range of service from preventive</p>
+                <div class="plus-animation mt-4 d-inline-flex align-items-center">
+                  <button class="more-slide more"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0">More About Us
+                      <img src="./images/plus.svg" alt="plus"></a></button>
+                  <button class="more-slide"><a href="" class="more-slide2"><i class='bx bx-play'></i></a></button>
+                  <button class="more-slide text-white third-slide">Watch More</button>
+                </div>
+              </div>
+
+              <div class="carousel-image">
+                <img src="./images/main-slider-img-2.jpg" alt="City">
+              </div>
+
+
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+              <div class="text-overlay">
+                <h4 class="slide-badge health">Health Care</h4>
+                <h2 class="slide-title display-4 mb-4"><span class="">Exceptional Health</span> Always There Top</h2>
+                <p class="slide-description lead mb-4">Health care is a vital aspect of maintaining overall
+                  well-being,encompassing a range of service from preventive</p>
+                <div class="plus-animation mt-4 d-inline-flex align-items-center sm-d-block">
+                  <button class="more-slide more"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0">More About Us
+                      <img src="./images/plus.svg" alt="plus"></a></button>
+                  <button class="more-slide"><a href="" class="more-slide2"><i class='bx bx-play'></i></a></button>
+                  <button class="more-slide text-white third-slide">Watch More</button>
+                </div>
+
+              </div>
+              <div class="carousel-image">
+                <img src="./images/main-slider-img-3.jpg" alt="Technology">
+              </div>
+
+
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
-    <!-- Closed Section for about  -->
+  </div>
 
-    <!-- Latest Service Section -->
-     <section>
-        <div class="container-fluid my-4 service">
-           <h3 class="py-3 px-4 text-center rounded-pill mx-auto">Latest service</h3>
-            <h1 class="text-center mt-4" data-aos="fade-right">Compassionate Care Always<br/>There Health First</h1>
-            <div class="row ro-bord mt-5 mx-auto rounded-5">
 
-                <div class="col-md-4 card-items cardbtn my-5">
-                    <h2 class="text-center fs-4"> Care Med Clinic</h2>
-                       <div class="d-inline-flex w-100 my-4 ">
-                            <span class="mx-auto rounded-circle backg-span p-3">
-                                <img width="45"  height="45" src="https://img.icons8.com/external-outline-lafs/64/1A1A1A/external-drugs-medicine-outline-part-2-v2-outline-lafs.png" alt="external-drugs-medicine-outline-part-2-v2-outline-lafs"/>
-                            </span>
-                       </div>
-                    <p class="text-center">Health care is a vital aspect of maintaining overall well-being, encompassing a range</p>
-                    <button class="med w-100 border-0 my-4"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0 mx-auto">Read More<i class='bx bx-plus' ></i> </a></button>
-                </div>
+  <!-- Marquee Section -->
+  <div class="section">
+    <div class="marquee">
+      <div class="marquee-content">
+        <div class="marquee-item">Unlock a 20% savings on your first medical service.</div>
+        <div class="marquee-item">Creative Design</div>
+        <div class="marquee-item">Bootstrap Powered</div>
+        <div class="marquee-item">Responsive Layout</div>
+        <div class="marquee-item">Smooth Animations</div>
+        <div class="marquee-item">Unlock a 20% savings on your first medical service</div>
+        <div class="marquee-item">Unlock a 20% savings on your first medical service</div>
+        <div class="marquee-item">Unlock a 20% savings on your first medical service</div>
+      </div>
+    </div>
+  </div>
+  <!-- Closed Marqueen Section -->
 
-                <div class="col-md-4 card-items cardbtn my-5">
-                    <h2 class="text-center fs-4">Vitality Health Solutions</h2>
-                        <div class="d-inline-flex w-100 my-4">
-                            <span class="mx-auto rounded-circle backg-span p-3">
-                                <img width="45" height="45" class="text-white" src="https://img.icons8.com/external-outline-satawat-anukul/64/1A1A1A/external-medical-madical-outline-outline-satawat-anukul-48.png" alt="external-medical-madical-outline-outline-satawat-anukul-48"/>
-                            </span> 
-                        </div>
-
-                        
-                    <p class="text-center">Health care is a vital aspect of maintaining overall well-being, encompassing a range</p>
-                     <button class="med w-100 border-0 mt-4"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0 mx-auto">Read More <i class='bx bx-plus' ></i></a></button>
-                </div>
-              
-                <div class="col-md-4 card-items cardbtn my-5">
-                    <h2 class="text-center fs-4">WellSpring Wellness Center</h2>
-                        <div class="d-inline-flex w-100 my-4">
-                            <span class="mx-auto rounded-circle backg-span p-3">
-                                <img width="45" height="45" src="https://img.icons8.com/external-smashingstocks-hand-drawn-black-smashing-stocks/99/1A1A1A/external-Broken-Bone-halloween-and-scary-characters-smashingstocks-hand-drawn-black-smashing-stocks.png" alt="external-Broken-Bone-halloween-and-scary-characters-smashingstocks-hand-drawn-black-smashing-stocks"/>
-                            </span>
-                        </div>
-                       
-                    <p class="text-center">Health care is a vital aspect of maintaining overall well-being, encompassing a range</p>
-                    <button class="w-100 border-0 med my-4"><a href="" class="bg-white rounded-pill px-4 py-3 mx-auto">Read More <i class='bx bx-plus' ></i></a></button>
-                </div>
-            </div>
+  <!-- Section for About -->
+  <div class="container-fluid mb-4">
+    <div class="about-container mx-auto rounded-5 d-flex justify-content-between">
+      <div class="row">
+        <div class="col-md-6 mx-auto about-img">
+          <img src="./images/about-two-img-1.jpg" class="rounded-start-5 rounded-sm-5 mx-auto" alt="">
         </div>
-     </section>
+        <div class="col-md-6 about mx-auto mt-3 border-2 border-danger">
+          <h2 class="rounded-pill px-4 py-2 fs-5">About Us</h2>
+          <h1>Your Wellness Our Priority Empowering Healthie</h1>
+          <div class="">
+            <div class="d-inline-flex align-items-center mt-5">
+              <div class="wellness mx-auto rounded-circle">
+                <img width="45" height="45"
+                  src="https://img.icons8.com/external-sbts2018-outline-sbts2018/58/external-bandage-emergencies-set-sbts2018-outline-sbts2018.png"
+                  alt="external-bandage-emergencies-set-sbts2018-outline-sbts2018" />
+              </div>
 
-     <!-- Marquee Section -->
-       <!-- Marquee Section -->
-     <div class="section">
-        <div class="marqueetwo">
-            <div class="marquee-contenttwo">
-                <span class="mx-3"><span><img width="64" height="64" src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/006d77/external-tooth-paste-medical-kiranshastry-lineal-kiranshastry.png" alt="external-tooth-paste-medical-kiranshastry-lineal-kiranshastry"/></span></span>
-                <div class="marquee-itemtwo">Health Success</div>
-                <span class="mx-3"><img width="50" height="50" src="https://img.icons8.com/external-others-pike-picture/50/006d77/external-blood-gastroenterology-and-hepatology-others-pike-picture-2.png" alt="external-blood-gastroenterology-and-hepatology-others-pike-picture-2"/></span>
-                <div class="marquee-itemtwo">Creative Design</div>
-                <span class="mx-3"><img width="64" height="64" src="https://img.icons8.com/external-xnimrodx-lineal-xnimrodx/64/006d77/external-glucometer-pharmacy-xnimrodx-lineal-xnimrodx.png" alt="external-glucometer-pharmacy-xnimrodx-lineal-xnimrodx"/></span>
-                <div class="marquee-itemtwo">Bootstrap Powered</div>
-                <span class="mx-3"><img width="64" height="64" src="https://img.icons8.com/external-wanicon-lineal-wanicon/64/006d77/external-blood-transfusion-medical-wanicon-lineal-wanicon-1.png" alt="external-blood-transfusion-medical-wanicon-lineal-wanicon-1"/></span>
-                <div class="marquee-itemtwo">Health Services</div>
-                <span class="mx-3"> <img width="64" height="64" src="https://img.icons8.com/external-others-pike-picture/50/006d77/external-injection-injections-others-pike-picture-3.png" alt="external-injection-injections-others-pike-picture-3"/></span>
-                <div class="marquee-itemtwo">Wellness Center</div>
-                <span class="mx-3"><img width="64" height="64" src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/006d77/external-tooth-paste-medical-kiranshastry-lineal-kiranshastry.png" alt="external-tooth-paste-medical-kiranshastry-lineal-kiranshastry"/></span>
-                <div class="marquee-itemtwo">Medical Group</div>
-                <span class="mx-3"><span><img width="64" height="64" src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/006d77/external-tooth-paste-medical-kiranshastry-lineal-kiranshastry.png" alt="external-tooth-paste-medical-kiranshastry-lineal-kiranshastry"/></span></span>
-                <div class="marquee-itemtwo">Digital Service</div>
+              <div class="icon2">
+                <h3 class="">Your Wellness Our Priority</h1>
+                  <p>Health care is a vital aspect of maintaining overall well-being, encompassing a range of services
+                    from preventive care to treatment</p>
+              </div>
+
             </div>
-        </div>
-     </div>
-    <!-- Closed Marqueen Section -->
 
-
-    <!-- Latest Project Section -->
-
-    <div class="container-fluid prio mt-5">
-      <h4 class="mx-auto text-center rounded-pill py-2 px-2 mt-3">Latest Project</h4>
-            <h1 class="text-center" data-aos="fade-right">Your Wellness Our Priority <br/> Healthier Lives</h1>
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-12">
-          <!-- <div class="card shadow"> -->
-            <div class="card-body p-0 border border-2 border-danger w-100">
-              <!-- Tab Navigation -->
-              <ul class="nav nav-tab mx-auto mt-5" id="animatedTabBar" role="tablist">
-                <li class="nav-items" role="presentation">
-                  <button class="nav-link active latest" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
-                    <h3 class="rounded-pill py-2 px-3">View All</h3>
-                  </button>
-                </li>
-                <li class="nav-items" role="presentation">
-                  <button class="nav-link latest" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
-                    <h3 class="rounded-pill py-2 px-3">Body Surgery</h3>
-                  </button>
-                </li>
-                <li class="nav-items" role="presentation">
-                  <button class="nav-link latest" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button" role="tab" aria-controls="messages" aria-selected="false">
-                    <h3 class="rounded-pill py-2 px-3">Dental Care</h3>
-                  </button>
-                </li>
-                <li class="nav-items" role="presentation">
-                  <button class="nav-link latest" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab" aria-controls="" aria-selected="false">
-                    <h3 class="rounded-pill py-2 px-3">Allergic Care</h3>
-                  </button>
-                </li>
-                <li class="nav-items" role="presentation">
-                  <button class="nav-link latest" id="eyescare-tab" data-bs-toggle="tab" data-bs-target="#eyescare" type="button" role="tab" aria-controls="" aria-selected="false">
-                    <h3 class="rounded-pill py-2 px-3">Eye Care</h3>
-                  </button>
-                </li>
-
-              </ul>
-              
-              <!-- Tab Content -->
-              <div class="tab-content" id="animatedTabContent border border-2 border-info">
-                <div class="tab-pane row fade" id="home" role="tabpanel" aria-labelledby="home-tab">
-                  <div class="images-box boder-2 border-success">
-                    <img src="./images/project-2-1.jpg" alt="Home" class="tab-image t-image rounded-5">
-                    <img  src="./images/project-2-3 (1).jpg" alt="home" class="tab-image rounded-5">
-                    <img src="./images/project-2-5.jpg" alt="home" class="tab-image rounded-5">
-                    <img src="./images/project-2-4.jpg" alt="Home" class="tab-image rounded-5">
-                    <img  src="./images/project-2-5.jpg" alt="home" class="tab-image rounded-5">
-                    <img src="./images/project-2-6.jpg" alt="home" class="tab-image rounded-5">
-                  </div>
-                </div>
-                
-                <div class="tab-pane images-box2 fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                  <img src="./images/project-2-2 (1).jpg" alt="Profile" class="tab-image rounded-5">
-                  <img src="./images/project-2-4.jpg" alt="profile" class="tab-image rounded-5">
-                  <img src="./images/project-2-5.jpg" alt="profile" class="tab-image rounded-5">
-                  <img src="./images/project-2-4.jpg" alt="profile" class="tab-image rounded-5">
-                  <img src="" alt="" class="tab-image rounded-5">
-                  <img src="./images/project-2-6.jpg" alt="Settings" class="tab-image rounded-5">
-                </div>
-                
-                <div class="tab-pane fade images-box3" id="messages" role="tabpanel" aria-labelledby="messages-tab">
-                  <img src="./images/project-2-3 (1).jpg" alt="Messages" class="tab-image rounded-5">
-                  <img src="./images/project-2-2.jpg" alt="Messages" class="tab-image rounded-5">
-                </div>
-                
-                <div class="tab-pane fade images-box4" id="settings" role="tabpanel" aria-labelledby="settings-tab">
-                  <img src="./images/project-2-1.jpg" alt="Settings" class="tab-image rounded-5">
-                  <img src="./images/project-2-4.jpg" alt="Settings" class="tab-image rounded-5">
-                  <img src="./images/project-2-3 (1).jpg" alt="Settings" class="tab-image rounded-5">
-                  <img src="./images/project-2-2.jpg" alt="Messages" class="tab-image rounded-5">
-                  <img src="./images/project-2-5.jpg" alt="Messages" class="tab-image rounded-5">
-                  <img src="./images/project-2-6.jpg" alt="Messages" class="tab-image rounded-5">
+            <div class="d-inline-flex align-items-center mt-3">
+              <div class="wellness mx-auto rounded-circle">
+                <img width="45" height="45"
+                  src="https://img.icons8.com/external-sbts2018-outline-sbts2018/58/external-bandage-emergencies-set-sbts2018-outline-sbts2018.png"
+                  alt="external-bandage-emergencies-set-sbts2018-outline-sbts2018" />
+              </div>
+              <div class="icon2">
+                <h3>Empowering Healthier Lives</h1>
+                  <p>Health care is a vital aspect of maintaining overall well-being, encompassing a range of services
+                    from preventive care to treatment</p>
+              </div>
+            </div>
+          </div>
+          <img src="./images/about-two-img-2.jpg" alt="" class="w-100 rounded-4 mt-4">
+          <div class="w-100 mt-5">
+            <div class="">
+              <div class="row col-sm">
+                <div class="col-sm col-md-6 row-p text-start">
+                  <p class="align-items-center d-inline-flex gap-2"> <i class='bx bxs-chevrons-right'></i>Where Health
+                    Matters Most</p>
                 </div>
 
-                <div class="tab-pane fade images-box5" id="eyescare" role="tabpanel" aria-labelledby="eyescare-tab">
-                  <img src="./images/project-2-5.jpg" alt="eyescare" class="tab-image rounded-5">
-                  <img src="./images/project-2-4.jpg" alt="eyescare" class="tab-image rounded-5">
-                  <img src="./images/project-2-6.jpg" alt="eyescare" class="tab-image rounded-5">
+                <div class="col-sm col-md-6 row-p text-start">
+                  <p class="align-items-center d-inline-flex gap-2"><i class='bx bxs-chevrons-right'></i>Caring for You,
+                    Always</p>
+                </div>
+
+                <div class="col-sm col-md-6 row-p text-start">
+                  <p class="align-items-center d-inline-flex gap-2"><i class='bx bxs-chevrons-right'></i>Enhancing Lives
+                    Through Care</p>
+                </div>
+
+                <div class="col-sm col-md-6 ml-0 row-p text-start">
+                  <p class="align-items-center d-inline-flex gap-2 "><i class='bx bxs-chevrons-right'></i>Quality Care,
+                    Exceptional Service</p>
                 </div>
               </div>
             </div>
+
+          </div>
+          <h3>Health care is a vital aspect of maintaining overall well-being, encompassing a range of services from
+            preventive care to treatment</h3>
+          <button class="butt"><a href="" class="rounded-pill px-4 py-3 my-4 sm-w-100">More About Us <i
+                class='bx bx-plus'></i></a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Closed Section for about  -->
+
+  <!-- Latest Service Section -->
+  <section>
+    <div class="container-fluid my-4 service">
+      <h3 class="py-3 px-4 text-center rounded-pill mx-auto">Latest service</h3>
+      <h1 class="text-center mt-4" data-aos="fade-right">Compassionate Care Always<br />There Health First</h1>
+      <div class="row ro-bord mt-5 mx-auto rounded-5">
+
+        <div class="col-md-4 card-items cardbtn my-5">
+          <h2 class="text-center fs-4"> Care Med Clinic</h2>
+          <div class="d-inline-flex w-100 my-4 ">
+            <span class="mx-auto rounded-circle backg-span p-3">
+              <img width="45" height="45"
+                src="https://img.icons8.com/external-outline-lafs/64/1A1A1A/external-drugs-medicine-outline-part-2-v2-outline-lafs.png"
+                alt="external-drugs-medicine-outline-part-2-v2-outline-lafs" />
+            </span>
+          </div>
+          <p class="text-center">Health care is a vital aspect of maintaining overall well-being, encompassing a range
+          </p>
+          <button class="med w-100 border-0 my-4"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0 mx-auto">Read
+              More<i class='bx bx-plus'></i> </a></button>
+        </div>
+
+        <div class="col-md-4 card-items cardbtn my-5">
+          <h2 class="text-center fs-4">Vitality Health Solutions</h2>
+          <div class="d-inline-flex w-100 my-4">
+            <span class="mx-auto rounded-circle backg-span p-3">
+              <img width="45" height="45" class="text-white"
+                src="https://img.icons8.com/external-outline-satawat-anukul/64/1A1A1A/external-medical-madical-outline-outline-satawat-anukul-48.png"
+                alt="external-medical-madical-outline-outline-satawat-anukul-48" />
+            </span>
+          </div>
+
+
+          <p class="text-center">Health care is a vital aspect of maintaining overall well-being, encompassing a range
+          </p>
+          <button class="med w-100 border-0 mt-4"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0 mx-auto">Read
+              More <i class='bx bx-plus'></i></a></button>
+        </div>
+
+        <div class="col-md-4 card-items cardbtn my-5">
+          <h2 class="text-center fs-4">WellSpring Wellness Center</h2>
+          <div class="d-inline-flex w-100 my-4">
+            <span class="mx-auto rounded-circle backg-span p-3">
+              <img width="45" height="45"
+                src="https://img.icons8.com/external-smashingstocks-hand-drawn-black-smashing-stocks/99/1A1A1A/external-Broken-Bone-halloween-and-scary-characters-smashingstocks-hand-drawn-black-smashing-stocks.png"
+                alt="external-Broken-Bone-halloween-and-scary-characters-smashingstocks-hand-drawn-black-smashing-stocks" />
+            </span>
+          </div>
+
+          <p class="text-center">Health care is a vital aspect of maintaining overall well-being, encompassing a range
+          </p>
+          <button class="w-100 border-0 med my-4"><a href="" class="bg-white rounded-pill px-4 py-3 mx-auto">Read More
+              <i class='bx bx-plus'></i></a></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee Section -->
+  <!-- Marquee Section -->
+  <div class="section">
+    <div class="marqueetwo">
+      <div class="marquee-contenttwo">
+        <span class="mx-3"><span><img width="64" height="64"
+              src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/006d77/external-tooth-paste-medical-kiranshastry-lineal-kiranshastry.png"
+              alt="external-tooth-paste-medical-kiranshastry-lineal-kiranshastry" /></span></span>
+        <div class="marquee-itemtwo">Health Success</div>
+        <span class="mx-3"><img width="50" height="50"
+            src="https://img.icons8.com/external-others-pike-picture/50/006d77/external-blood-gastroenterology-and-hepatology-others-pike-picture-2.png"
+            alt="external-blood-gastroenterology-and-hepatology-others-pike-picture-2" /></span>
+        <div class="marquee-itemtwo">Creative Design</div>
+        <span class="mx-3"><img width="64" height="64"
+            src="https://img.icons8.com/external-xnimrodx-lineal-xnimrodx/64/006d77/external-glucometer-pharmacy-xnimrodx-lineal-xnimrodx.png"
+            alt="external-glucometer-pharmacy-xnimrodx-lineal-xnimrodx" /></span>
+        <div class="marquee-itemtwo">Bootstrap Powered</div>
+        <span class="mx-3"><img width="64" height="64"
+            src="https://img.icons8.com/external-wanicon-lineal-wanicon/64/006d77/external-blood-transfusion-medical-wanicon-lineal-wanicon-1.png"
+            alt="external-blood-transfusion-medical-wanicon-lineal-wanicon-1" /></span>
+        <div class="marquee-itemtwo">Health Services</div>
+        <span class="mx-3"> <img width="64" height="64"
+            src="https://img.icons8.com/external-others-pike-picture/50/006d77/external-injection-injections-others-pike-picture-3.png"
+            alt="external-injection-injections-others-pike-picture-3" /></span>
+        <div class="marquee-itemtwo">Wellness Center</div>
+        <span class="mx-3"><img width="64" height="64"
+            src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/006d77/external-tooth-paste-medical-kiranshastry-lineal-kiranshastry.png"
+            alt="external-tooth-paste-medical-kiranshastry-lineal-kiranshastry" /></span>
+        <div class="marquee-itemtwo">Medical Group</div>
+        <span class="mx-3"><span><img width="64" height="64"
+              src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/006d77/external-tooth-paste-medical-kiranshastry-lineal-kiranshastry.png"
+              alt="external-tooth-paste-medical-kiranshastry-lineal-kiranshastry" /></span></span>
+        <div class="marquee-itemtwo">Digital Service</div>
+      </div>
+    </div>
+  </div>
+  <!-- Closed Marqueen Section -->
+
+  <!-- Latest Project Section -->
+
+  <div class="container-fluid prio mt-5">
+    <h4 class="mx-auto text-center rounded-pill py-2 px-2 mt-3">Latest Project</h4>
+    <h1 class="text-center" data-aos="fade-right">Your Wellness Our Priority <br /> Healthier Lives</h1>
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-12">
+        <!-- <div class="card shadow"> -->
+        <div class="card-body p-0 border border-2 border-danger w-100">
+          <!-- Tab Navigation -->
+          <ul class="nav nav-tab mx-auto mt-5" id="animatedTabBar" role="tablist">
+            <li class="nav-items" role="presentation">
+              <button class="nav-link active latest" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                type="button" role="tab" aria-controls="home" aria-selected="true">
+                <h3 class="rounded-pill py-2 px-3">View All</h3>
+              </button>
+            </li>
+            <li class="nav-items" role="presentation">
+              <button class="nav-link latest" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                type="button" role="tab" aria-controls="profile" aria-selected="false">
+                <h3 class="rounded-pill py-2 px-3">Body Surgery</h3>
+              </button>
+            </li>
+            <li class="nav-items" role="presentation">
+              <button class="nav-link latest" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages"
+                type="button" role="tab" aria-controls="messages" aria-selected="false">
+                <h3 class="rounded-pill py-2 px-3">Dental Care</h3>
+              </button>
+            </li>
+            <li class="nav-items" role="presentation">
+              <button class="nav-link latest" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings"
+                type="button" role="tab" aria-controls="" aria-selected="false">
+                <h3 class="rounded-pill py-2 px-3">Allergic Care</h3>
+              </button>
+            </li>
+            <li class="nav-items" role="presentation">
+              <button class="nav-link latest" id="eyescare-tab" data-bs-toggle="tab" data-bs-target="#eyescare"
+                type="button" role="tab" aria-controls="" aria-selected="false">
+                <h3 class="rounded-pill py-2 px-3">Eye Care</h3>
+              </button>
+            </li>
+
+          </ul>
+
+          <!-- Tab Content -->
+          <div class="tab-content" id="animatedTabContent border border-2 border-info">
+            <div class="tab-pane row fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <div class="images-box boder-2 border-success">
+                <img src="./images/project-2-1.jpg" alt="Home" class="tab-image t-image rounded-5">
+                <img src="./images/project-2-3 (1).jpg" alt="home" class="tab-image rounded-5">
+                <img src="./images/project-2-5.jpg" alt="home" class="tab-image rounded-5">
+                <img src="./images/project-2-4.jpg" alt="Home" class="tab-image rounded-5">
+                <img src="./images/project-2-5.jpg" alt="home" class="tab-image rounded-5">
+                <img src="./images/project-2-6.jpg" alt="home" class="tab-image rounded-5">
+              </div>
+            </div>
+
+            <div class="tab-pane images-box2 fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              <img src="./images/project-2-2 (1).jpg" alt="Profile" class="tab-image rounded-5">
+              <img src="./images/project-2-4.jpg" alt="profile" class="tab-image rounded-5">
+              <img src="./images/project-2-5.jpg" alt="profile" class="tab-image rounded-5">
+              <img src="./images/project-2-4.jpg" alt="profile" class="tab-image rounded-5">
+              <img src="" alt="" class="tab-image rounded-5">
+              <img src="./images/project-2-6.jpg" alt="Settings" class="tab-image rounded-5">
+            </div>
+
+            <div class="tab-pane fade images-box3" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+              <img src="./images/project-2-3 (1).jpg" alt="Messages" class="tab-image rounded-5">
+              <img src="./images/project-2-2.jpg" alt="Messages" class="tab-image rounded-5">
+            </div>
+
+            <div class="tab-pane fade images-box4" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+              <img src="./images/project-2-1.jpg" alt="Settings" class="tab-image rounded-5">
+              <img src="./images/project-2-4.jpg" alt="Settings" class="tab-image rounded-5">
+              <img src="./images/project-2-3 (1).jpg" alt="Settings" class="tab-image rounded-5">
+              <img src="./images/project-2-2.jpg" alt="Messages" class="tab-image rounded-5">
+              <img src="./images/project-2-5.jpg" alt="Messages" class="tab-image rounded-5">
+              <img src="./images/project-2-6.jpg" alt="Messages" class="tab-image rounded-5">
+            </div>
+
+            <div class="tab-pane fade images-box5" id="eyescare" role="tabpanel" aria-labelledby="eyescare-tab">
+              <img src="./images/project-2-5.jpg" alt="eyescare" class="tab-image rounded-5">
+              <img src="./images/project-2-4.jpg" alt="eyescare" class="tab-image rounded-5">
+              <img src="./images/project-2-6.jpg" alt="eyescare" class="tab-image rounded-5">
+            </div>
+          </div>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+
+  <!--Client Review Section  -->
+  <div class="section-numb">
+    <div class="container-fluid mt-5">
+      <div class="row big-numb mx-auto shadow rounded-5">
+        <div class="numb-container d-flex justify-content-between mx-auto text-center">
+          <div class="number-plus d-inline-flex px-4 py-3 rounded-4 justify-content-between col-12">
+            <h1>600+</h1>
+            <p>Complte<br />
+              Project</p>
+          </div>
+
+          <div class="number-plus d-inline-flex rounded-4 px-4 py-3 col-12 justify-content-between">
+            <h1>200+</h1>
+            <p>Team<br />
+              Member</p>
+          </div>
+
+          <div class="number-plus d-inline-flex rounded-4 px-4 py-3 col-12 justify-content-between">
+            <h1>500+</h1>
+            <p>Clients<br />
+              Reviews</p>
+          </div>
+
+          <div class="number-plus d-inline-flex rounded-4 px-4 py-3 col-12 justify-content-between">
+            <h1>50+</h1>
+            <p>Winning<br />
+              award</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Close Client Review Section -->
+
+  <!-- Chose Us Section -->
+  <section class="py-5 overflow-hidden mx-auto" style="margin-top: 80px; width: 96%">
+    <!-- <div class="container"> -->
+    <div class="row align-items-center">
+      <div class="col-lg-6 chose">
+        <p class="rounded-pill py-1 px-3 text-center chose-p">Why Chose Us</p>
+        <h2 data-aos="fade-right">Health care is maintenance or improvement</h2>
+        <h3 class="lead" data-aos="fade-right" data-aos-delay="200">Health care is a vital aspect of maintaining overall
+          well-being, encompassing a range of services from preventive care to treatment.</h3>
+        <div class="d-flex align-items-center stagger-slide-up stagger-item mt-4">
+          <div class="" style="width: 100%">
+            <div class="d-inline-flex justify-content-between" style="width: 90%">
+              <h5 class="mb-0">Vitality Health Solutions</h5>
+              <p class="mb-0 text-muted">90%</p>
+            </div>
+            <div class="bar-container rounded-pill w-100 mt-2">
+              <div class="bar-bottom rounded-pill" style="width: 90%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center stagger-slide-up stagger-item mt-4">
+          <div class="" style="width: 100%">
+            <div class="d-inline-flex justify-content-between" style="width: 80%">
+              <h5 class="mb-0">WellSpring Wellness Center</h5>
+              <p class="mb-0 text-muted">80%</p>
+            </div>
+            <div class="bar-container rounded-pill w-100 mt-2">
+              <div class="bar-bottom rounded-pill" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center mb-3 stagger-slide-up stagger-item chose">
+          <h3 class="mb-0 text-muted">Health care is a vital aspect of maintaining overall well-being, encompassing a
+            range of services from preventive care to treatment</h3>
+        </div>
+
+        <div class="d-md-inline-flex justify-content-between align-items-center mb-3 stagger-slide-up stagger-item"
+          style="width: 70%;">
+          <button class="butt"><a href="" class="rounded-pill px-4 py-3 my-4 sm-w-100">Read More<i
+                class='bx bx-plus'></i></a></button>
+          <!-- <div class=""> -->
+          <div class="phone-icon mb-0 text-muted d-inline-flex align-items-center justify-content-between">
+            <i class='bx bxs-phone rounded-circle text-center p-3'></i>
+            <p class="pt-3">Phone Number <br /><a href="#">012 345 678 9101</a></p>
+          </div>
           <!-- </div> -->
         </div>
       </div>
+
+      <div class="col-lg-6 position-relative" data-aos="fade-left" data-aos-delay="500">
+        <div class="chose-image mx-md-auto" style="z-index: -1;"></div>
+        <img src="./images/why-choose-one-img-1.png" alt="Content image" class="chose-over position-absolute">
+      </div>
     </div>
+    <!-- </div> -->
+  </section>
+  <!--Closed Chose Us Section -->
 
-     <!--Client Review Section  -->
-     <div class="section-numb">
-      <div class="container-fluid mt-5">
-        <div class="row big-numb mx-auto shadow rounded-5">
-          <div class="numb-container d-flex justify-content-between mx-auto text-center">
-            <div class="number-plus d-inline-flex px-4 py-3 rounded-4 justify-content-between col-12">
-              <h1>600+</h1>
-              <p>Complte<br/>
-                Project</p>
+  <!-- Our Team Member -->
+  <section class="container-fluid mt-5 overflow-hidden">
+    <div class="mx-auto text-center" style="margin-top: 80px; width: 98%">
+      <p class="rounded-pill py-1 px-3 d-flex text-center chose-p mx-auto">Our Team Member</p>
+      <h2 data-aos="fade-right" class="mt-4">Trust in Health Caring Every<br />Step Heal with Heart</h2>
+
+      <div class="card-body card-top">
+        <div class="row d-lg-flex justify-content-between mx-auto" style="width: 100%;">
+          <div class="card col-lg-4 col-md-10 mx-auto position-relative border-0 card-boxcard"
+            style="height: fit-content;">
+            <div class="position-absolute team-bord" style="z-index: 1; width: 100%; top: -65px; right: 0;">
+              <img src="./images/team-2-1.jpg" class="team-image" style="z-index: 1; width: 300px; height: 300px;"
+                alt="tea-image">
             </div>
-
-              <div class="number-plus d-inline-flex rounded-4 px-4 py-3 col-12 justify-content-between">
-                <h1>200+</h1>
-                <p>Team<br/>
-                  Member</p>
-              </div>
-
-            <div class="number-plus d-inline-flex rounded-4 px-4 py-3 col-12 justify-content-between">
-              <h1>500+</h1>
-              <p>Clients<br/>
-                Reviews</p>
+            <div class="position-absolute" style="z-index: 1; top: 200px; right: 0; width: 100%;">
+              <i class='bx bx-plus fs-2 bg-white rounded-circle p-3 mx-auto'></i>
             </div>
-
-            <div class="number-plus d-inline-flex rounded-4 px-4 py-3 col-12 justify-content-between">
-              <h1>50+</h1>
-              <p>Winning<br/>
-                award</p>
+            <div class="cards-imgs"></div>
+            <div class="position-absolute team-text text-center mt-3" style="top: 70%; width: 100%;">
+              <h2>Dr.William Barbara</h2>
+              <p>Neurology Expert</p>
             </div>
+          </div>
 
+          <div class="card col-lg-4 col-md-10 mx-auto position-relative border-0 card-boxcard"
+            style="height: fit-content;">
+            <div class="position-absolute team-bord" style="z-index: 1; width: 100%; top: -65px; right: 0;">
+              <img src="./images/team-2-2.jpg" class="team-image mx-auto"
+                style="width: 300px; height: 300px; z-index: 1;" alt="team-image">
+            </div>
+            <div class="position-absolute" style="z-index: 1; top: 200px; right: 0; width: 100%;">
+              <i class='bx bx-plus fs-2 bg-white rounded-circle p-3 mx-auto'></i>
+            </div>
+            <div class="cards-imgs"></div>
+            <div class="position-absolute team-text mt-3" style="top: 70%; width: 100%;;">
+              <h2>Dr.Richard Susan</h2>
+              <p>Neurology Expert</p>
+            </div>
+          </div>
+
+          <div class="card col-lg-4 col-md-10 mx-auto position-relative border-0 card-boxcard"
+            style="height: fit-content;">
+            <div class="position-absolute team-bord" style="z-index: 1; width: 100%; top: -65px; right: 0;">
+              <img src="./images/team-2-3.jpg" class="team-image" style="width: 300px; height: 300px; z-index: 1;"
+                alt="team-image">
+            </div>
+            <div class="position-absolute" style="z-index: 1; top: 200px; right: 0; width: 100%;">
+              <i class='bx bx-plus fs-2 bg-white rounded-circle p-3 mx-auto'></i>
+            </div>
+            <div class="cards-imgs"></div>
+            <div class="position-absolute team-text mt-3" style="top: 70%; width: 100%;">
+              <h2>Dr.Joseph Jessica</h2>
+              <p>Neurology Expert</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Closed Our Team member -->
+
+  <!-- Section 3: Services -->
+  <section id="section3" class="appointment-container w-100 overflow-hidden" style="margin-top: 120px;">
+    <div class="container-fluid w-100 position-relative" style="margin-bottom: 150px;">
+      <div class="mx-auto appontmentimg-container" style="z-index: -1; height: fit-content;">
+        <img src="./images/appiontment-one-img-1.jpg" class="w-100 sm-w-100 teampic rounded-5" alt="" srcset="">
+      </div>
+
+
+      <div class="position-absolute text-center" style="z-index: 1; top: 100px; width: 100%;">
+        <div class="row mx-auto justify-content-between" style=" width: 95%;">
+          <div class="col-lg-5" data-aos="fade-right">
+            <div class="content-box content-boxone d-flex flex-column shadow rounded-5 text-start"
+              style="width: 90%; height: fit-content;">
+              <h3 class="text-reveal" data-aos-delay="100">
+                <span class="reveal-content">Appiontment Now</span>
+              </h3>
+              <label for="" class="mx-auto mt-2" style="width: 83%;">
+                <input type="name" name="yourname" placeholder="Your Name"
+                  class="label rounded-pill border-0 w-100 py-3 px-4">
+                <p class="px-4 mb-0" style="margin-top: 2px;">This field is required.</p>
+              </label>
+
+              <label for="" class="mx-auto mt-1" style="width: 83%;">
+                <input type="email" name="email" placeholder="Your Email"
+                  class="label rounded-pill border-0 w-100 py-3 px-4">
+                <p class="px-4 mb-0" style="margin-top: 2px;">This field is required.</p>
+              </label>
+
+              <label for="" class="mx-auto mt-1" style="width: 83%;">
+                <input type="name" placeholder="Your Number" class="label rounded-pill border-0 w-100 py-3 px-4">
+                <p class="px-4 mb-0" style="margin-top: 2px;">This field is required.</p>
+              </label>
+
+              <label for="" class="mx-auto" style="width: 83%;">
+                <textarea class="label rounded-4 py-3 px-4 border-0" style="width: 100%;"
+                  placeholder="Massage here..."></textarea>
+              </label>
+
+              <a href="#" class=" px-2 team-icon text-center mx-auto mt-2 mb-4" style="width: 84%;">
+                <h3 class="w-100 rounded-pill py-3 mx-auto"><span class="d-inline-flex">Appiontment Now <i
+                      class='bx bx-plus px-2 fs-4'></i></span></h3>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="col-lg-5" data-aos="fade-left" data-aos-delay="300">
+            <div class="content-box content-boxtwo  d-flex flex-column shadow rounded-5 text-start"
+              style="width: 90%; height: fit-content;">
+              <h3 class="text-reveal" data-aos-delay="400">
+                <span class="reveal-content">Working Hours</span>
+              </h3>
+              <p style="font-size: 16px; width: 83%;" class="mt-3 mx-auto">Health care is a vital aspect of maintain
+                overall well-being, encompassing a range</p>
+              <h4 class="rounded-4 mx-auto py-3 px-4 my-4 d-flex justify-content-between" style="width: 83%;">
+                Saturday-Sunday <span>9 Am To 5 Pm</span></h4>
+              <h4 class="rounded-4 mx-auto py-3 px-4 mb-4 d-flex justify-content-between" style="width: 83%;">
+                Monday-Tuesday <span>1 Pm To 7 Pm</span></h4>
+              <h4 class="rounded-4 mx-auto py-3 px-4 mb-4 d-flex justify-content-between" style="width: 83%">
+                Wednesday-Thusday <span>2 Am To 6 Pm</span></h4>
+              <h4 class="rounded-4 mx-auto py-3 px-4 mb-5 d-flex justify-content-between" style="width: 83%;">
+                Friday<span>Off Day</span></h4>
+            </div>
           </div>
         </div>
       </div>
-     </div>
-     <!-- Close Client Review Section -->
+    </div>
+  </section>
+  <!--Closed of Appointment  -->
 
-     <!-- Chose Us Section -->
-     <section class="py-5 overflow-hidden mx-auto" style="margin-top: 80px; width: 96%">
-      <!-- <div class="container"> -->
-          <div class="row align-items-center">
-              <div class="col-lg-6 chose">
-                <p class="rounded-pill py-1 px-3 text-center chose-p">Why Chose Us</p>
-                  <h2 data-aos="fade-right">Health care is maintenance <br/> or improvement</h2>
-                  <h3 class="lead" data-aos="fade-right" data-aos-delay="200">Health care is a vital aspect of maintaining overall well-being, encompassing a range of services from preventive care to treatment.</h3>
-                  
-                  <div class="d-flex align-items-center stagger-slide-up stagger-item mt-4">
-                      <div class="" style="width: 100%">
-                        <div class="d-inline-flex justify-content-between" style="width: 90%" >
-                          <h5 class="mb-0">Vitality Health Solutions</h5>
-                          <p class="mb-0 text-muted">90%</p>
-                        </div>
-                        <div class="bar-container rounded-pill w-100 mt-2">
-                          <div class="bar-bottom rounded-pill" style="width: 90%"></div>
-                        </div>
-                      </div>
-                  </div>
-                  
-                  <div class="d-flex align-items-center stagger-slide-up stagger-item mt-4">
-                      <div class="" style="width: 100%">
-                        <div class="d-inline-flex justify-content-between" style="width: 80%">
-                          <h5 class="mb-0">WellSpring Wellness Center</h5>
-                          <p class="mb-0 text-muted">80%</p>
-                        </div>
-                        <div class="bar-container rounded-pill w-100 mt-2">
-                          <div class="bar-bottom rounded-pill" style="width: 80%"></div>
-                        </div> 
-                      </div>   
-                  </div>
-                  
-                  <div class="d-flex align-items-center mb-3 stagger-slide-up stagger-item chose">
-                    <h3 class="mb-0 text-muted">Health care is a vital aspect of maintaining overall well-being, encompassing a range of services from preventive care to treatment</h3>
-                  </div>
-                  
-                  <div class="d-md-inline-flex justify-content-between align-items-center mb-3 stagger-slide-up stagger-item" style="width: 70%;">
-                    <button class="butt"><a href="" class="rounded-pill px-4 py-3 my-4 sm-w-100">Read More<i class='bx bx-plus' ></i></a></button>
-                      <!-- <div class=""> -->
-                          <div class="phone-icon mb-0 text-muted d-inline-flex align-items-center justify-content-between" style="width: 230px">
-                             <i class='bx bxs-phone rounded-circle text-center p-3'></i>
-                             <p>Phone Number <br/><a href="#">012 345 678 9101</a></p> 
-                          </div>
-                      <!-- </div> -->
-                  </div>
+  <!-- Ask Question Section -->
+  <section class="container-fluid ask-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-12 ask mb-5">
+          <h2 class="rounded-pill p-2 px-2 text-center">Ask Question</h2>
+          <h1 class="mt-3">Partner in Health Matters Most</h1>
+          <p class="mt-4">Health care is a vital aspect of maintaining overall well-being, encompassing a range of
+            services from preventive care to treatment for your life</p>
+
+          <a href="#" class="ask-icon" style="width: 21%">
+            <h3 class="rounded-pill d-flex justify-content-center align-items-center justify-content-between px-1"
+              style="height: 55px;">
+              <span class="contact">Contact Us</span>
+              <div class="rounded-circle ask-iconi text-center justify-content-center align-items-center d-flex"
+                style="width: 45px; height: 45px;">
+                <img width="22" height="21" src="https://img.icons8.com/forma-regular-filled/24/FFFFFF/phone.png"
+                  alt="phone" class="" />
+              </div>
+            </h3>
+          </a>
+        </div>
+
+        <div class="col-lg-8 col-sm-12">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item rounded-4 border border-2 border-secondary mt-4">
+              <h2 class="accordion-header" style="height: fit-content;">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  <h2>1. What should I do in case of a medical emergency?</h2>
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <p>Healthcare is a crucial aspect of our well-being. From hospitals to the a clinics, the encompasses
+                    a wide range Healthcare is a crucial aspect of our well-being. From hospitals</p>
+                  <code>.accordion-flush</code>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border border-2 border-secondary rounded-4 mt-4">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  <h2>2. What are Dedicated to Better Health?</h2>
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <p>Healthcare is a crucial aspect of our well-being. From hospitals to the a clinics, the encompasses
+                    a wide range Healthcare is a crucial aspect of our well-being. From hospitals</p>
+                  <code>.accordion-flush</code>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border border-2 border-secondary rounded-4 mt-4">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  <h2>3. What preventive screenings do you recommend?</h2>
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <p>Healthcare is a crucial aspect of our well-being. From hospitals to the a clinics, the encompasses
+                    a wide range Healthcare is a crucial aspect of our well-being. From hospitals</p>
+                  <code>.accordion-flush</code>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border border-2 border-secondary rounded-4 mt-4">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed border-0" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapsefour" aria-expanded="false" aria-controls="flush-collapsefour">
+                  <h2>4. How can I schedule an appointment?</h2>
+                </button>
+              </h2>
+              <div id="flush-collapsefour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <p>Healthcare is a crucial aspect of our well-being. From hospitals to the a clinics, the encompasses
+                    a wide range Healthcare is a crucial aspect of our well-being. From hospitals</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New letter section -->
+  <section class="newletter mb-5">
+    <div class="container-fluid ">
+      <div class="container letter-container d-flex rounded-5">
+        <div class="position-relative col-lg-3 col-md-4 imagedivone">
+          <!-- <img src="./images/newsletter-one-img-1.png" alt="" class="position-absolute letter-image1" style="z-index: 1;"> -->
+          <img src="./images/newsletter-one-img-1.png" alt="Swinging Image"
+            class="img-fluid rounded position-absolute letter-image1" id="swing" style="z-index: 1;">
+          <img src="./images/newsletter-one-shape-1.png" alt="" class="position-absolute letter-image2">
+        </div>
+
+
+        <div class="imagedivtwo col-lg-8 col-md-8 py-5z">
+          <h2>Subscribe To Our Newsletter</h2>
+          <label for="text" class="d-md-flex" style="width: 100%;">
+            <input type="text" placeholder="Enter Your Email" class="rounded-start-pill border-0">
+            <a href="#" class="rounded-end-pill text-center d-flex align-items-center">Subscribe Now</a>
+          </label>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- close New letter section -->
+
+  <!-- Testimonial Section -->
+  <section class="container-fluid testimonial text-center">
+    <h2 class="rounded-pill px-3 py-2 mx-auto mb-3">Clients Testimonial</h2>
+    <h1 class="mx-auto">Enhancing Lives Through Care Your Partner</h1>
+    <div class="container mt-5 position-relative">
+      <div class="row">
+        <div class="col-5 col-lg-12 testimonialboxone position-absolute">
+          <div class="swiper mySwiper rounded-4 shadow">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <h2 class="swiper-h2 border-0">Dr.Donald Williamson 1</h2>
+                <p class="text-start">Eye Expert</p>
+                <div class="stars d-flex justify-content-between mb-4">
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                </div>
+                
+                <h3 class="text-start">Healthcare is a crucial aspect of our a of the
+                  well being. From hospitals to clinics and a medical
+                  field encompasses a wide that be rang services diagnosing
+                </h3>
               </div>
 
-              <div class="col-lg-6 position-relative" data-aos="fade-left" data-aos-delay="500">
-                  <div class="chose-image mx-md-auto" style="z-index: -1;"></div>
-                  <img src="./images/why-choose-one-img-1.png" alt="Content image" class="chose-over position-absolute">
-               </div>
+              <div class="swiper-slide">
+                <h2 class="swiper-h2 border-0">Dr.Donald coder 2</h2>
+                <p class="text-start">Eye Expert</p>
+                <div class="stars d-flex justify-content-between mb-4">
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                </div>
+                <h3 class="text-start">Healthcare is a crucial aspect of our a of the
+                  well being. From hospitals to clinics and a medical
+                  field encompasses a wide that be rang services diagnosing
+                </h3>
+              </div>
+
+              <div class="swiper-slide">
+                <h2 class="swiper-h2 border-0">Dr.Hacker Donald 3</h2>
+                <p class="text-start">Eye Expert</p>
+                <div class="stars d-flex justify-content-between mb-4">
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                </div>
+                <h3 class="text-start">Healthcare is a crucial aspect of our a of the
+                  well being. From hospitals to clinics and a medical
+                  field encompasses a wide that be rang services diagnosing
+                </h3>
+              </div>
+
+            </div>
+            <div class="swip-container position-absolute mt-3 mb-4">
+              <div class="swiper-button-next rounded-circle">
+                <img width="24" height="24" src="https://img.icons8.com/material-outlined/24/006d77/right.png" alt="right"/>
+              </div>
+              <div class="swiper-button-prev rounded-circle">
+                <img width="24" height="24" src="https://img.icons8.com/material-outlined/24/006d77/left.png" alt="left"/>
+              </div>
+
+            </div>
           </div>
-      <!-- </div> -->
+        </div>
+        <div class="col-7 col-md-12 testimonialboxtwo">
+          <img src="./images/testimonial-two-img-1.jpg" alt="" class="testimonial-image rounded-5">
+        </div>
+      </div>
+    </div>
   </section>
-      <!--Closed Chose Us Section -->
+  <!--Close Testimonial Section -->
+  
+  <!-- Latest Blog Section -->
+   <section class="container-fluid">
+    <div class="container blog border-0">
+       <h2 class="rounded-pill py-2 px-3 mt-4">Latest Blog And News</h2>
+       <div class="blog2 d-inline-flex justify-content-between mt-2">
+        <h1>Where Health Matters Most CareMed ClinicVitality</h1>
+        <button class="btn"><a href="" class="rounded-pill py-2 px-4  d-flex gap-2 justify-content-center align-items-center">View All Blogs <i class='bx bx-plus fs-3'></i></a></button>
+       </div>
+        <div class="card-body mt-5">
+          <div class="row">
+            <div class="card-items col-lg-4">
+              <div class="class-blog rounded-5">
+                <div class="blog-card mx-auto mb-4">
+                  <div class="rounded-4 image-container zoom-with-overlay">
+                    <div  class="calendar-box position-absolute d-flex justify-content-between align-items-center" style="z-index: 1; left: 25px; top: 5px; width: 170px; ">
+                      <div class="calendar rounded-circle d-flex justify-content-center align-items-center" style="width: 35px; height: 35px;">
+                        <img width="20" height="20" src="https://img.icons8.com/external-basicons-solid-edtgraphics/50/031b4e/external-Calendar-project-management-basicons-solid-edtgraphics.png" alt="external-Calendar-project-management-basicons-solid-edtgraphics"/>
+                      </div>  
+                      <p class="rounded-pill py-1 px-3" style="margin-top: 15px;">05 May 2025</p>
+                    </div>
+                    <img src="./images/blog-2-1.jpg" alt="" class="zoom-img rounded-4">
+                  </div>
+                  <h2 class="border-0 mt-3">Empowering Futures Quality the Care Close to Home and way</h2>
+                  <div class="d-flex admin justify-content-between">
+                    <h3><img width="24" height="24" src="https://img.icons8.com/forma-bold-filled/24/031b4e/user.png" alt="user" class="mx-1"/>Admin</h3>
+                    <h3><img width="25" height="25" src="https://img.icons8.com/external-anggara-glyph-anggara-putra/32/031b4e/external-folder-interface-anggara-glyph-anggara-putra.png" alt="external-folder-interface-anggara-glyph-anggara-putra" class="mx-1"/>Catagory</h3>
+                   </div>
+                   <button class="border-0 ml-0"><a href="" class="admin-a d-flex gap-2 align-items-center">Read More <i class='bx bx-plus fs-3'></i></a></button>
+                </div>
+              </div>
+            </div>
 
-      <!-- Our Team Member -->
-       <section class="container-fluid border border-2 border-danger">
-          <p class="rounded-pill py-1 px-3 text-center chose-p">Our Team Member</p>
-          <h2 data-aos="fade-right">Trust in Health Caring Every<br/>Step Heal with Heart</h2>
-       </section>
-       <!-- Closed Our Team member -->
+            <div class="card-items col-lg-4 m-0">
+              <div class="class-blog rounded-5">
+                <div class="blog-card mx-auto">
+                  <div class="image-container zoom-with-overlay rounded-4">
+                    <div  class="calendar-box position-absolute d-flex justify-content-between align-items-center" style="z-index: 1; left: 25px; top: 5px; width: 170px; ">
+                      <div class="calendar rounded-circle d-flex justify-content-center align-items-center" style="width: 35px; height: 35px;">
+                        <img width="20" height="20" src="https://img.icons8.com/external-basicons-solid-edtgraphics/50/031b4e/external-Calendar-project-management-basicons-solid-edtgraphics.png" alt="external-Calendar-project-management-basicons-solid-edtgraphics"/>
+                      </div>  
+                      <p class="rounded-pill py-1 px-3" style="margin-top: 15px;">05 May 2025</p>
+                    </div>
+                    <img src="./images/blog-2-2.jpg" alt="" class="zoom-img rounded-4">
+                  </div>
+                  <h2 class="border-0 mt-3">Your Health, Our Mission Caring for You Always</h2>
+                  <div class="d-flex admin justify-content-between">
+                    <h3><img width="24" height="24" src="https://img.icons8.com/forma-bold-filled/24/031b4e/user.png" alt="user" class="mx-1"/>Admin</h3>
+                    <h3> <img width="25" height="25" src="https://img.icons8.com/external-anggara-glyph-anggara-putra/32/031b4e/external-folder-interface-anggara-glyph-anggara-putra.png" alt="external-folder-interface-anggara-glyph-anggara-putra" class="mx-1"/>Catagory</h3>
+                   </div>
+                   <button class="border-0 mt-2 mb-4"><a href="" class="admin-a d-flex gap-2 align-items-center">Read More <i class='bx bx-plus fs-3'></i></a></button>
+                </div>
+              </div>
+            </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="./carousel.js"></script>
-    <script src="./tablist.js"></script>
-    <script src="./stagger-slide.js"></script>
+            <div class="card-items col-lg-4 m-0">
+              <div class="class-blog rounded-5">
+                <div class="blog-card mx-auto">
+                  <div class="image-container zoom-with-overlay rounded-4">
+                    <div  class="calendar-box position-absolute d-flex justify-content-between align-items-center" style="z-index: 1; left: 25px; top: 5px; width: 170px; ">
+                      <div class="calendar rounded-circle d-flex justify-content-center align-items-center" style="width: 35px; height: 35px;">
+                        <img width="20" height="20" src="https://img.icons8.com/external-basicons-solid-edtgraphics/50/031b4e/external-Calendar-project-management-basicons-solid-edtgraphics.png" alt="external-Calendar-project-management-basicons-solid-edtgraphics"/>
+                      </div>  
+                      <p class="rounded-pill py-1 px-3" style="margin-top: 15px;">05 May 2025</p>
+                    </div>
+                    <img src="./images/blog-2-3.jpg" alt="" class="zoom-img rounded-4">
+                 </div>
+                 <h2 class="border-0 mt-3">Enhancing Lives Through Care Partner in Health</h2>
+                 <div class="d-flex admin justify-content-between">
+                  <h3><img width="24" height="24" src="https://img.icons8.com/forma-bold-filled/24/031b4e/user.png" alt="user" class="mx-1"/>Admin</h3>
+                  <h3><img width="25" height="25" src="https://img.icons8.com/external-anggara-glyph-anggara-putra/32/031b4e/external-folder-interface-anggara-glyph-anggara-putra.png" alt="external-folder-interface-anggara-glyph-anggara-putra" class="mx-1"/>Catagory</h3>
+                 </div>
+                 <button class="border-0 mt-2 mb-4"><a href="" class="admin-a d-flex justify-content-center align-items-center">Read More <i class='bx bx-plus fs-3'></i></a></button>
+                </div>
+              </div> 
+            </div>
+          </div> 
+        </div>
+    </div>
+   </section>
+     <!--Closed Latest Blog Section -->
+
+     <!-- Footer Section -->
+      <div class="container-fluid position-relative footer w-100 p-0" style="margin-top: 120px;">
+        <div class="shape w-100" style="z-index: -1;"></div>
+        <div class="position-absolute" style="top: 0; width: 100%;">
+          <div class="mx-auto foot-logo" style="margin-top: 90px; width: 96%;">
+            <img src="./images/logo-1.png" alt="" class=" d-md-flex">
+
+            <div class="foot-header d-flex justify-content-between align-items-center border border-2 border-danger">
+            <h2>Ready To Get Started With Service</h2>
+              <div class="social justify-content-between d-flex" style="width: 18%;">
+                <a href="#"><i class='bx bxl-facebook rounded-circle d-inline-flex justify-content-center align-items-center' style='color:#031b4e'></i></a>
+                <a href="#"><i class='bx bxl-twitter rounded-circle d-inline-flex justify-content-center align-items-center' style='color:#031b4e'></i></a>
+                <a href="#"><i class='bx bxl-linkedin-square rounded-circle d-inline-flex justify-content-center align-items-center' style='color:#031b4e'></i></a>
+                <a href="#"><i class='bx bxl-pinterest-alt rounded-circle d-inline-flex justify-content-center align-items-center' style='color:#031b4e'></i></a>
+              </div>
+            </div>
+  
+            <div class="row mt-4 d-flex footer-row justify-content-between border border-2 border-2 border-danger">
+              <div class="col-lg-4 foot">
+                <label for="" class="w-100 rounded-pill border border-2 d-flex align-items-center justify-content-center">
+                  <input type="text" placeholder="Enter Your Email" class="rounded-pill py-3 border-0">
+                  <div class="arrow-up rounded-circle d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;">
+                    <a href=""> <img width="15" height="15" src="https://img.icons8.com/android/50/FFFFFF/up-right-arrow.png" alt="up-right-arrow"/></a>
+                  </div>  
+                </label>
+                <p>Health care is a vital aspect of maintaining overall well-being, encompassing a range of services from preventive care to treatment for your life</p>
+              </div>
+
+              <div class="col-lg-7 col-md-12">
+                <div class="row">
+                  <div class="cards col-lg-3 col-md-12" style="width: 31%;">
+                    <h1>Department</h1>
+                    <ul class="mt-lg-5 text-start" style="padding-left: 0;">
+                      <li><a href="">Vitality Vitals Clinic</a></li>
+                      <li><a href="">Medical Heath Care</a></li>
+                      <li><a href="">Care Plus Family Physicians</a></li>
+                      <li><a href="">Swift Care Urgent Center</a></li>
+                      <li><a href="">Renewal Rehab Services</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="cards col-lg-3 col-md-12" style="width: 32%;margin-left: 70px;">
+                    <h1 style="padding-left: 20px;">Contact</h1>
+                    <ul class="mt-lg-5 list-contact" style="padding-left: 0;">
+                      <li class="d-inline-flex mb-3 justify-content-between" style="width: 92%; height: 70px;">
+                        <div class="cantact-icon mt-3 border boder-2 rounded-circle d-flex justify-content-center align-items-center" style="width: 45px; height: 45px;">
+                          <img width="20" height="20" src="https://img.icons8.com/material-sharp/24/031b4e/marker.png" alt="marker"/>
+                        </div>
+                        <div class="contact-text">
+                          <h5 class="pt-2">Address</h5>
+                          <p>66 Broklyant,India</p>
+                        </div>
+                      </li>
+
+                      <li class="d-inline-flex mb-3 justify-content-between" style="width: 92%; height: 70px;">
+                        <div class="cantact-icon mt-3 border border-2 rounded-circle d-flex justify-content-center align-items-center" style="width: 45px; height: 45px;">
+                           <img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/031b4e/phone--v1.png" alt="phone--v1"/>
+                        </div>
+                          <div class="contact-text">
+                            <h5 class="pt-2">Phone Number</h5>
+                            <p>012 345 678 9101</p>
+                          </div>
+                      </li>
+                        
+                      <li class="d-inline-flex justify-content-between" style="width: 90%;">
+                        <div class="cantact-icon mt-3 border border-2 rounded-circle d-flex justify-content-center align-items-center" style="width: 45px; height: 45px;">
+                           <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/031b4e/filled-message.png" alt="filled-message"/>
+                        </div>
+                        <div class="contact-text">
+                           <h5 class="pt-2">Email</h5>
+                           <p>abcd@gmail.com</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="cards col-lg-3 ml-lg-5 col-md-12" style="width: 20%; margin-left: 55px;">
+                    <h1>Page</h1>
+                    <ul class="mt-lg-5" style="padding-left: 0;">
+                      <li><a href="">About Us</a></li>
+                      <li><a href="">Services</a></li>
+                      <li><a href="">Why Chose Us</a></li>
+                      <li><a href="">Doctors</a></li>
+                      <li><a href="">Blog And News</a></li>
+                     </ul> 
+                  </div>
+                </div>
+              </div>  
+            </div>
+          </div>
+
+          <div class="teams mx-auto d-lg-flex d-md-flex-column rounded-4 mb-0" style="width: 90%; height: 90px; margin-bottom: 0;">
+            <div class="team-text d-flex justify-content-between mx-auto" style="width: 95%;">
+              <h2><span>©Careon.</span> 2025 | All Rights Reserved</h2>
+              <ul class="d-lg-flex justify-content-between" style="width: 38%; height: fit-content;">
+                <li><a href="">Trems & Condition</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>   
+      </div>-
+      <!-- Close Footer Section -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script src="./carousel.js"></script>
+  <script src="./tablist.js"></script>
+  <script src="./stagger-slide.js"></script>
+  <script src="./image-animi.js"></script>
+  <script src="./swipper.js"></script>
 </body>
 </html>
