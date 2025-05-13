@@ -82,16 +82,6 @@
       border-bottom: 2px solid transparent !important;
     }
 
-    /* .nav-tab .nav-link.active {
-        font-weight: bold;
-        border-top-width: 2px !important;
-        background-color: aqua;
-      }
-       */
-    /* .nav-tab .nav-link:not(.active):hover {
-        background-color: rgba(17, 58, 243, 0.925);
-      } */
-
     .tab-icon {
       margin-right: 8px;
     }
@@ -183,13 +173,13 @@
       </div>
 
       <div class="plus d-none d-lg-block">
-        <a href="#" class="btn bg-white rounded-pill px-5 py-3">Get in touch<img src="./images/plus.svg" alt="plus"></a>
+        <a href="#" class="btn bg-white rounded-pill px-5 py-3" style="font-size: 15px; font-weight: 500;">Get In Touch<img src="./images/plus.svg" alt="plus"></a>
       </div>
     </nav>
 
 
     <!-- Responsive -->
-    <div class="smallscreen">
+    <div class="smallscreen border border-2 border-danger">
       <div class="screen-sm w-100 d-flex justify-content-between mt-5">
         <a class="ml-2" href="#"><img src="./images/logo-2.png" alt=""></a>
         <button class="btn menu-icon text-white fs-2 p-0" type="button" data-bs-toggle="offcanvas"
@@ -199,73 +189,129 @@
       <!-- <div class=" bg-info w-100 border border-2 border-danger"> -->
       <div class="offcanvas offcanvas-start border border-2 border-info can-vas w-100" tabindex="-1"
         id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-        <div class="layer2">
-          <div class="offcanvas-header d-inline-flex">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel"><img src="./images/logo-2.png"></h5>
-            <button type="button" class="btn border-0 text-white fs-2" data-bs-dismiss="offcanvas" aria-label=""><i
+        <div class="layer2 overflow-y-scroll overflow-x-hidden">
+          <div class="offcanvas-header d-inline-flex w-100">
+            <h5 class="offcanvas-title mt-3" id="offcanvasExampleLabel"><img src="./images/logo-3.png"></h5>
+            <button type="button" class="btn border-0 text-white fs-1" data-bs-dismiss="offcanvas" aria-label="" style="margin-left: 90px;"><i
                 class='bx bx-x'></i></button>
           </div>
-          <div class="offcanvas-body border border-2 border-danger ">
-
-            <div class="dropdown mt-3">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                Dropdown button
+          <div class="offcanvas-body p-0">
+            <div class="dropdown-mobile mx-auto" style="width: 92%; margin-top: 30px;">
+              <button class="dropdown-btn">
+                Home <span class="arrow"><i class='bx bx-chevron-right d-flex justify-content-center align-items-center' style="font-size: 22px;width: 25px;height: 25px;"></i></span>
               </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <ul class="dropdown-content">
+                <li><a class="dropdown-item" href="#">Home One</a></li>
+                <li><a class="dropdown-item" href="#">Home Two</a></li>
+                <li><a class="dropdown-item" href="#">Home Three</a></li>
+                <li><a class="dropdown-item" href="#">Home Four</a></li>
+                <li><a class="dropdown-item" href="#">Home Five</a></li>
+                <li><a class="dropdown-item" href="#">Home Dark</a></li>
               </ul>
-            </div>
+          </div>
+            
+      <div class="dropdown-mobile mx-auto" style="width: 92%; margin-top: -15px;">
+        <button class="dropdown-btn">
+          About Us 
+        </button>
+      </div>
+      
+      <div class="dropdown-mobile mx-auto" style="width: 92%;">
+        <button class="dropdown-btn">
+          Pages <span class="arrow"><i class='bx bx-chevron-right d-flex justify-content-center align-items-center' style="font-size: 22px;width: 25px;height: 25px;"></i> </span>
+        </button>
+        <ul class="dropdown-content">
+          <li><a class="dropdown-item" href="#">Doctors</a></li>
+          <li><a class="dropdown-item" href="#">Doctors Carousel</a></li>
+          <li><a class="dropdown-item" href="#">Doctor Details</a></li>
+          <li><a class="dropdown-item" href="#">Projects</a></li>
+          <li><a class="dropdown-item" href="#">Project Carousel</a></li>
+          <li><a class="dropdown-item" href="#">Project Details</a></li>
+          <li><a class="dropdown-item" href="#">Testimonials</a></li>
+          <li><a class="dropdown-item" href="#">Testimonial Carousel</a></li>
+          <li><a class="dropdown-item" href="#">Pricing</a></li>
+          <li><a class="dropdown-item" href="#">Appoinment</a></li>
+          <li><a class="dropdown-item" href="#">Faq</a></li>
+          <li><a class="dropdown-item" href="#">404 Error</a></li>
+        </ul>
+      </div>
+      
+      <div class="dropdown-mobile mx-auto" style="width: 92%; margin-top: -15px;">
+          <button class="dropdown-btn">
+            Services <span class="arrow"><i class='bx bx-chevron-right d-flex justify-content-center align-items-center' style="font-size: 22px;width: 25px;height: 25px;"></i> </span>
+          </button>
+          <ul class="dropdown-content">
+            <li><a class="dropdown-item" href="#">Services</a></li>
+            <li><a class="dropdown-item" href="#">Service Carousel</a></li>
+            <li><a class="dropdown-item" href="#">Vitality Health Solutions</a></li>
+            <li><a class="dropdown-item" href="#">WellSpring Wellness Center</a></li>
+            <li><a class="dropdown-item" href="#">Family Health Medical</a></li>
+            <li><a class="dropdown-item" href="#">Evergreen Medical Center</a></li>
+            <li><a class="dropdown-item" href="#">PureLife Health Services</a></li>
+          </ul>
+        </div>
+        
+        <div class="dropdown-mobile mx-auto" style="width: 92%; margin-top: -15px;">
+          <button class="dropdown-btn">
+            Shop <span class="arrow"><i class='bx bx-chevron-right d-flex justify-content-center align-items-center' style="font-size: 22px;width: 25px;height: 25px;"></i> </span>
+          </button>
+          <ul class="dropdown-content">
+            <li><a class="dropdown-item" href="#">Products</a></li>
+            <li><a class="dropdown-item" href="#">Product Details</a></li>
+            <li><a class="dropdown-item" href="#">Cart</a></li>
+            <li><a class="dropdown-item" href="#">Checkout</a></li>
+            <li><a class="dropdown-item" href="#">Wishlist</a></li>
+            <li><a class="dropdown-item" href="#">Sign Up</a></li>
+            <li><a class="dropdown-item" href="#">Login</a></li>
+          </ul>
+        </div>
 
-            <div class="dropdown mt-3">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                Dropdown button
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </div>
+        <div class="dropdown-mobile mx-auto mt" style="width: 92%; margin-top: -15px;">
+          <button class="dropdown-btn">
+            Blog <span class="arrow"><i class='bx bx-chevron-right d-flex justify-content-center align-items-center' style="font-size: 22px;width: 25px;height: 25px;"></i> </span>
+          </button>
+          <ul class="dropdown-content">
+            <li><a class="dropdown-item" href="#">Blog</a></li>
+            <li><a class="dropdown-item" href="#">Blog Carousel</a></li>
+            <li><a class="dropdown-item" href="#">Blog List V-01</a></li>
+            <li><a class="dropdown-item" href="#">Blog List V-02</a></li>
+            <li><a class="dropdown-item" href="#">Blog Details</a></li>
+          </ul>
+        </div>
 
-            <div class="dropdown mt-3">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                Dropdown button
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </div>
+        <div class="dropdown-mobile mx-auto" style="width: 92%; margin-top: -15px; border-bottom: 1px;">
+          <button class="dropdown-btn">
+            Contact
+          </button>
+        </div>
 
-            <div class="dropdown mt-3">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                Dropdown button
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </div>
+        <div class="mobile-footer">
+          <div class="d-flex mx-auto" style="width: 90%;">
+            <div class="mobile-icon rounded-circle d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;">
+              <img width="12" height="12" src="https://img.icons8.com/ios-filled/50/FFFFFF/filled-message.png" alt="filled-message"/>
+           </div>
+            <h2 style="font-size: 14px; font-weight: 500; padding-top: 8px; padding-left: 10px;"><a href="#">needhelp@careon.com</a></h2>
+          </div>
 
-            <div class="dropdown mt-3">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                Dropdown button
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </div>
+          <div class="d-flex mx-auto mt-2" style="width: 90%;">
+            <div class="mobile-icon rounded-circle d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;">
+              <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/phone.png" alt="phone"/>
+           </div>
+            <h2 style="font-size: 14px; font-weight: 500; padding-top: 8px; padding-left: 10px;"><a href="#">666 888 0000</a></h2>
           </div>
         </div>
+
+        <div class="mobile-foot-icon justify-content-between d-flex mt-2 mb-4" style="width: 50%; margin-left: 10px;">
+          <a href="#"><i class='bx bxl-twitter d-inline-flex justify-content-center align-items-center' style='color:#fff'></i></a>
+          <a href="#"><i class='bx bxl-facebook d-inline-flex justify-content-center align-items-center' style='color:#fff'></i></a>
+          <a href="#"><i class='bx bxl-instagram d-inline-flex justify-content-center align-items-center' style='color:#fff'></i></a> 
+          <a href="#"><i class='bx bxl-pinterest-alt d-inline-flex justify-content-center align-items-center' style='color:#fff'></i></a> 
+        </div>
+
+        </div>
       </div>
-      <!-- </div> -->
-    </div>
+     </div>
+  </div>
 
     <!-- slider -->
     <div class="container-fluid mb-5">
@@ -290,8 +336,7 @@
                 <p class="slide-description lead mb-4">Health care is a vital aspect of maintaining overall
                   well-being,encompassing a range of service from preventive</p>
                 <div class="plus-animation mt-4 d-flex align-items-center">
-                  <button class="more-slide more col-sm-5"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0">More
-                      About Us <img src="./images/plus.svg" alt="plus"></a></button>
+                  <button class="more-slide more col-sm-5"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0">More About Us <img src="./images/plus.svg" alt="plus"></a></button>
                   <button class="more-slide"><a href="" class="more-slide2"><i class='bx bx-play'></i></a></button>
                   <button class="more-slide text-white third-slide">Watch More</button>
                 </div>
@@ -311,8 +356,7 @@
                 <p class="slide-description lead mb-4">Health care is a vital aspect of maintaining overall
                   well-being,encompassing a range of service from preventive</p>
                 <div class="plus-animation mt-4 d-inline-flex align-items-center">
-                  <button class="more-slide more"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0">More About Us
-                      <img src="./images/plus.svg" alt="plus"></a></button>
+                  <button class="more-slide more"><a href="" class="bg-white rounded-pill px-4 py-3 ml-0">More About Us<img src="./images/plus.svg" alt="plus"></a></button>
                   <button class="more-slide"><a href="" class="more-slide2"><i class='bx bx-play'></i></a></button>
                   <button class="more-slide text-white third-slide">Watch More</button>
                 </div>
@@ -321,8 +365,6 @@
               <div class="carousel-image">
                 <img src="./images/main-slider-img-2.jpg" alt="City">
               </div>
-
-
             </div>
 
             <!-- Slide 3 -->
@@ -343,7 +385,6 @@
               <div class="carousel-image">
                 <img src="./images/main-slider-img-3.jpg" alt="Technology">
               </div>
-
 
             </div>
           </div>
@@ -552,13 +593,13 @@
     <div class="row justify-content-center">
       <div class="col-12 col-lg-12">
         <!-- <div class="card shadow"> -->
-        <div class="card-body p-0 border border-2 border-danger w-100">
+        <div class="card-body p-0 w-100">
           <!-- Tab Navigation -->
           <ul class="nav nav-tab mx-auto mt-5" id="animatedTabBar" role="tablist">
             <li class="nav-items" role="presentation">
-              <button class="nav-link active latest" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+              <button class="nav-link latest" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
                 type="button" role="tab" aria-controls="home" aria-selected="true">
-                <h3 class="rounded-pill py-2 px-3">View All</h3>
+                <h3 class="rounded-pill active py-2 px-3">View All</h3>
               </button>
             </li>
             <li class="nav-items" role="presentation">
@@ -1061,7 +1102,7 @@
   
   <!-- Latest Blog Section -->
    <section class="container-fluid">
-    <div class="container blog border-0">
+    <div class="blog border-0 mx-auto" style="width: 96%;">
        <h2 class="rounded-pill py-2 px-3 mt-4">Latest Blog And News</h2>
        <div class="blog2 d-inline-flex justify-content-between mt-2">
         <h1>Where Health Matters Most CareMed ClinicVitality</h1>
@@ -1231,7 +1272,7 @@
             </div>
           </div>
 
-          <div class="teams mx-auto d-lg-flex d-md-flex-column rounded-4 mb-0" style="width: 90%; height: 90px; margin-bottom: 0;">
+          <div class="teams mx-auto d-lg-flex d-md-flex-column rounded-4 mb-0" style="width: 95%; height: 90px; margin-bottom: 0;">
             <div class="team-text d-flex justify-content-between mx-auto" style="width: 95%;">
               <h2><span>©Careon.</span> 2025 | All Rights Reserved</h2>
               <ul class="d-lg-flex justify-content-between" style="width: 38%; height: fit-content;">
@@ -1241,9 +1282,15 @@
               </ul>
             </div>
           </div>
-        </div>   
-      </div>-
-      <!-- Close Footer Section -->
+        </div> 
+            
+        <div class="box-to-top" id="backToTopBtn" title="Go to top"> 
+          <button class="to-top-text d-flex justify-content-center align-items-center" >
+            <div class="bar-line" style="width: 30px; height: 2px; margin-right: 10px;"></div>
+            GO BACK TOP
+          </button>
+        </div>
+      </div> 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
@@ -1256,5 +1303,7 @@
   <script src="./stagger-slide.js"></script>
   <script src="./image-animi.js"></script>
   <script src="./swipper.js"></script>
+  <script src="./to_the_top.js"></script>
+  <script src="./dropdown.js"></script>
 </body>
 </html>

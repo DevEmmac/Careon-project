@@ -1,5 +1,5 @@
 // Get elements
-const image = document.getElementById('swin');
+const image = document.getElementById('swing');
 const pauseBtn = document.getElementById('pauseBtn');
 const playBtn = document.getElementById('playBtn');
 const speedRange = document.getElementById('speedRange');
